@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bashan’s | קטלוג מלא</title>
+    <meta name="description" content="קטלוג מלא של כלי בטון ונרות בעבודת יד מבית Bashan’s." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="site-header" id="top">
+        <nav class="navbar container" aria-label="ניווט ראשי">
+            <a class="brand" href="index.html#top" aria-label="Bashan’s">
+                <span class="brand-mark" aria-hidden="true"></span>
+                <span class="brand-text">Bashan’s</span>
+            </a>
+
+            <button class="nav-toggle" type="button" aria-label="פתח תפריט" aria-expanded="false"
+                aria-controls="navMenu">
+                <span class="nav-toggle-lines" aria-hidden="true"></span>
+            </button>
+
+            <div class="nav-menu" id="navMenu">
+                <a class="nav-link" href="index.html#about">אודות</a>
+                <a class="nav-link" href="index.html#signature">הייחוד</a>
+                <a class="nav-link" href="index.html#order">הזמנה</a>
+                <a class="nav-link" href="index.html#contact">יצירת קשר</a>
+
+                <div class="nav-cta">
+                    <a class="btn btn-ghost" href="index.html#gallery">חזרה לגלריה</a>
+                    <a class="btn btn-gold" href="index.html#contact">הזמנה בוואטסאפ</a>
+                </div>
+            </div>
+        </nav>
+
+        <section class="section container" style="padding-top:32px;">
+            <div class="section-head" data-reveal>
+                <h1 class="section-title">קטלוג מלא</h1>
+                <p class="section-subtitle">
+                    כאן תמצא את כל התמונות. לחץ על כל תמונה כדי לפתוח במסך מלא.
+                </p>
+            </div>
+
+            <div class="catalog-actions" data-reveal>
+                <a class="btn btn-ghost" href="index.html#gallery">⬅ חזרה לעמוד הבית</a>
+                <a class="btn btn-gold" href="index.html#contact">שלח הודעת הזמנה</a>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <section class="section container" style="padding-top:0;">
+            <div class="catalog-grid">
+                <!-- תוסיף/תשכפל כמה שתרצה -->
+                <figure class="media media-gallery lightbox-item" data-reveal data-full="img/מארז1.JPG" tabindex="0">
+                    <img src="img/מארז1.JPG" alt="מארז 1" loading="lazy" />
+                </figure>
+
+                <figure class="media media-gallery lightbox-item" data-reveal data-full="img/מארז2.JPG" tabindex="0">
+                    <img src="img/מארז2.JPG" alt="מארז 2" loading="lazy" />
+                </figure>
+
+                <figure class="media media-gallery lightbox-item" data-reveal data-full="img/חמסה.JPG" tabindex="0">
+                    <img src="img/חמסה.JPG" alt="חמסה" loading="lazy" />
+                </figure>
+
+                <figure class="media media-gallery lightbox-item" data-reveal data-full="img/ברכה.JPG" tabindex="0">
+                    <img src="img/ברכה.JPG" alt="ברכה" loading="lazy" />
+                </figure>
+
+                <figure class="media media-gallery lightbox-item" data-reveal data-full="img/מארז כחול.JPG"
+                    tabindex="0">
+                    <img src="img/מארז כחול.JPG" alt="מארז כחול" loading="lazy" />
+                </figure>
+
+                <figure class="media media-gallery lightbox-item" data-reveal data-full="img/מארז 3.JPG" tabindex="0">
+                    <img src="img/מארז 3.JPG" alt="מארז 3" loading="lazy" />
+                </figure>
+            </div>
+
+            <div class="catalog-bottom-cta glass" data-reveal>
+                <div>
+                    <h3 class="order-cta-title">ראית משהו שאהבת?</h3>
+                    <p class="order-cta-text">שלח לנו הודעה קצרה עם שם/תיאור התמונה — ונרים הזמנה בהתאמה אישית.</p>
+                </div>
+                <a class="btn btn-gold btn-xl" href="index.html#contact">התחל הזמנה</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="copyright">© Amit Belzberg | כל הזכויות שמורות</p>
+    </footer>
+
+    <a class="to-top" href="#top" aria-label="חזרה לראש הדף">↑</a>
+
+    <!-- אותו lightbox בדיוק -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="lb-btn lb-close" type="button" aria-label="סגור">✕</button>
+        <button class="lb-btn lb-prev" type="button" aria-label="הקודם">‹</button>
+        <button class="lb-btn lb-next" type="button" aria-label="הבא">›</button>
+
+        <div class="lightbox-inner" role="dialog" aria-modal="true" aria-label="תצוגת תמונה">
+            <img class="lightbox-img" id="lightboxImg" alt="" />
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
