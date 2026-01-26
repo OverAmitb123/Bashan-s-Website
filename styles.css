@@ -60,6 +60,15 @@ img {
     display: block
 }
 
+#logo {
+    width: 167px;
+    height: 50px;
+}
+
+#logofo {
+    height: 167px;
+}
+
 .site-header {
     padding: 18px 0 32px
 }
