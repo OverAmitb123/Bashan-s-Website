@@ -118,37 +118,80 @@ img {
 
 .nav-toggle {
     display: none;
-    border: 1px solid rgba(17, 17, 19, .12);
-    background: rgba(255, 255, 255, .55);
-    color: var(--text);
-    border-radius: 14px;
-    padding: 10px 12px;
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    border: 1px solid rgba(17, 17, 19, .18);
+    background: rgba(255, 255, 255, .10);
+    border-radius: 16px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, .10);
+    transition: transform .15s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
+    -webkit-tap-highlight-color: transparent;
+    appearance: none;
+}
+
+@media (max-width: 720px) {
+    .nav-toggle {
+        display: flex;
+    }
+}
+
+.nav-toggle:hover {
+    border-color: rgba(199, 163, 95, .45);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, .12);
+    transform: translateY(-1px);
+}
+
+.nav-toggle:active {
+    transform: translateY(0);
 }
 
 .nav-toggle-lines {
-    display: block;
-    width: 22px;
+    width: 20px;
     height: 2px;
-    background: rgba(17, 17, 19, .70);
+    background: rgba(18, 18, 21, .78);
+    border-radius: 999px;
     position: relative;
+    transition: background .22s ease;
 }
 
-.nav-toggle-lines:before,
-.nav-toggle-lines:after {
+.nav-toggle-lines::before,
+.nav-toggle-lines::after {
     content: "";
     position: absolute;
     left: 0;
-    width: 22px;
+    width: 20px;
     height: 2px;
-    background: rgba(17, 17, 19, .70);
+    background: rgba(18, 18, 21, .78);
+    border-radius: 999px;
+    transition: transform .22s ease, top .22s ease, width .22s ease, opacity .22s ease;
 }
 
-.nav-toggle-lines:before {
-    top: -7px
+.nav-toggle-lines::before {
+    top: -7px;
 }
 
-.nav-toggle-lines:after {
-    top: 7px
+.nav-toggle-lines::after {
+    top: 7px;
+}
+
+.nav-toggle.active .nav-toggle-lines {
+    background: transparent;
+}
+
+.nav-toggle.active .nav-toggle-lines::before {
+    top: 0;
+    transform: rotate(45deg);
+    width: 22px;
+}
+
+.nav-toggle.active .nav-toggle-lines::after {
+    top: 0;
+    transform: rotate(-45deg);
+    width: 22px;
 }
 
 .nav-menu {
@@ -1131,4 +1174,55 @@ footer .copyright {
     .catalog-actions .btn {
         width: 100%;
     }
+}
+
+/* ===== Premium Hamburger Animation ===== */
+
+.nav-toggle-lines {
+    position: relative;
+    width: 24px;
+    height: 2px;
+    background: rgba(18, 18, 21, .95);
+    border-radius: 999px;
+    transition: background .2s ease;
+}
+
+.nav-toggle-lines::before,
+.nav-toggle-lines::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background: rgba(18, 18, 21, .95);
+    border-radius: 999px;
+    transition: transform .28s ease, top .28s ease, opacity .2s ease;
+}
+
+.nav-toggle-lines::before {
+    top: -8px;
+    width: 18px;
+}
+
+.nav-toggle-lines::after {
+    top: 8px;
+    width: 12px;
+}
+
+/* ===== Open State → turns into X ===== */
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-lines {
+    background: transparent;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-lines::before {
+    top: 0;
+    width: 24px;
+    transform: rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-lines::after {
+    top: 0;
+    width: 24px;
+    transform: rotate(-45deg);
 }
