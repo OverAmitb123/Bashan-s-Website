@@ -628,15 +628,15 @@ img {
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 190px;
+    grid-auto-rows: auto;
     gap: 12px;
 }
 
 .media-gallery {
     position: relative;
-    min-height: 190px;
     cursor: zoom-in;
     transition: transform .25s ease, box-shadow .25s ease;
+    aspect-ratio: 4 / 3;
 }
 
 .media-gallery img {
@@ -1146,5 +1146,25 @@ footer .copyright {
 
     .catalog-actions .btn {
         width: 100%;
+    }
+}
+
+@media (max-width: 980px) {
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .media-gallery {
+        aspect-ratio: 16 / 10;
+    }
+}
+
+@media (max-width: 520px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .media-gallery {
+        aspect-ratio: 16 / 9;
     }
 }
