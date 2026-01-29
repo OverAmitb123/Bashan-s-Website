@@ -10,8 +10,18 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
+    <link rel="preload" as="image" href="img/hero.webp" fetchpriority="high">
+
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap">
+    </noscript>
+
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -19,7 +29,7 @@
     <header class="site-header" id="top">
         <nav class="navbar container" aria-label="ניווט ראשי">
             <a href="#">
-                <img id="logo" src="img/logo.png" alt="Bashan’s Logo">
+                <img id="logo" src="img/logo.png" alt="Bashan’s Logo" width="160" height="160" decoding="async">
             </a>
 
             <button class="nav-toggle" type="button" aria-label="פתח תפריט" aria-expanded="false"
@@ -61,8 +71,9 @@
             </div>
 
             <div class="hero-visual" data-reveal>
-                <figure class="media media-hero lightbox-item" data-full="img/מארז1.JPG" tabindex="0">
-                    <img src="img/מארז1.JPG" alt="תמונה ראשית: כלי בטון ונרות" loading="eager" />
+                <figure class="media media-hero lightbox-item" data-full="img/hero.webp"" tabindex=" 0">
+                    <img src="img/hero.webp" alt="תמונה ראשית: כלי בטון ונרות" width="1200" height="1500"
+                        fetchpriority="high" decoding="async" />
                 </figure>
             </div>
         </section>
@@ -350,8 +361,6 @@
     </div>
 
     <div class="toast" id="successToast" role="status" aria-live="polite"></div>
-
-    <script src="script.js"></script>
 </body>
 
 </html>
