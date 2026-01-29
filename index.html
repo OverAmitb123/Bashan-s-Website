@@ -18,14 +18,10 @@
 <body>
     <header class="site-header" id="top">
         <nav class="navbar container" aria-label="ניווט ראשי">
-            <!-- <a class="brand" href="#top" aria-label="Bashan’s">
-                <span class="brand-mark" aria-hidden="true"></span>
-                <span class="brand-text">Bashan’s</span>
-            </a> -->
-
             <a href="#">
-                <img id="logo" src="img/logo.png" logo">
+                <img id="logo" src="img/logo.png" alt="Bashan’s Logo">
             </a>
+
             <button class="nav-toggle" type="button" aria-label="פתח תפריט" aria-expanded="false"
                 aria-controls="navMenu">
                 <span class="nav-toggle-lines"></span>
@@ -56,28 +52,12 @@
                     Bashan’s מתמחים בכלי בטון בעבודת יד — עם דגש על צורה,
                     גימור וסטייל שקט.
                     כל פריט מיוצר בקפידה, עם אפשרות להתאמה אישית מלאה — כדי שיתאים בדיוק לטעם ולצורך שלך.
-
                 </p>
 
                 <div class="hero-actions" data-reveal>
                     <a class="btn btn-gold btn-xl" href="#contact">התחלת הזמנה</a>
                     <a class="btn btn-glass btn-xl" href="#gallery">לגלריה</a>
                 </div>
-
-                <!-- <div class="hero-stats" data-reveal>
-                    <div class="stat">
-                        <div class="stat-num"></div>
-                        <div class="stat-label"></div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-num"></div>
-                        <div class="stat-label"></div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-num"></div>
-                        <div class="stat-label"></div>
-                    </div>
-                </div> -->
             </div>
 
             <div class="hero-visual" data-reveal>
@@ -200,6 +180,7 @@
                 </article>
             </div>
         </section>
+
         <section class="section container" id="gallery">
             <div class="section-head" data-reveal>
                 <h2 class="section-title">גלריה</h2>
@@ -236,8 +217,7 @@
             <div class="gallery-cta glass" data-reveal>
                 <div>
                     <h3 class="gallery-cta-title">רוצה לראות עוד?</h3>
-                    <p class="gallery-cta-sub">
-                        קטלוג מלא עם כל התמונות עם מגוון רחב של מוצרים/סטים </p>
+                    <p class="gallery-cta-sub">קטלוג מלא עם כל התמונות עם מגוון רחב של מוצרים/סטים</p>
                 </div>
 
                 <div class="gallery-cta-actions">
@@ -296,7 +276,6 @@
             <div class="contact-grid">
                 <div class="contact-card glass" data-reveal>
                     <h3 class="card-title">וואטסאפ להזמנה</h3>
-                    <p class="card-text">תמלא פרטים בטופס — והכפתור מייצר הודעה מסודרת.</p>
 
                     <div class="contact-actions">
                         <a class="btn btn-gold" id="waQuick" href="#">פתח וואטסאפ</a>
@@ -309,25 +288,27 @@
                         <div><strong>טלפון:</strong> 052-8522320</div>
                         <div><strong>אימייל:</strong> להחליף למייל אמיתי</div>
                     </div>
+
                     <img id="logofo" src="./img/logo no bg.png" alt="logo">
                 </div>
 
-                <form class="contact-form bordered" data-reveal>
+                <form class="contact-form bordered" data-reveal action="https://formspree.io/f/mjgwpgdj" method="POST">
                     <h3 class="card-title">טופס פרטים</h3>
 
                     <div class="field">
                         <label for="fullName">שם מלא</label>
-                        <input id="fullName" type="text" autocomplete="name" />
+                        <input id="fullName" name="fullName" type="text" autocomplete="name" required />
                     </div>
 
                     <div class="field">
                         <label for="phone">טלפון</label>
-                        <input id="phone" type="tel" placeholder="05X-XXXXXXX" autocomplete="tel" />
+                        <input id="phone" name="phone" type="tel" placeholder="05X-XXXXXXX" autocomplete="tel"
+                            required />
                     </div>
 
                     <div class="field">
                         <label for="orderType">מה תרצה להזמין?</label>
-                        <select id="orderType">
+                        <select id="orderType" name="orderType" required>
                             <option value="כלי בטון">כלי בטון</option>
                             <option value="נרות">נרות</option>
                             <option value="סט/שילוב">סט/שילוב</option>
@@ -337,13 +318,12 @@
 
                     <div class="field">
                         <label for="details">פרטים</label>
-                        <textarea id="details" rows="6" placeholder="צורה/סגנון, כמות, צבע/הקדשה..."></textarea>
+                        <textarea id="details" name="details" rows="6" placeholder="צורה/סגנון, כמות, צבע/הקדשה..."
+                            required></textarea>
                     </div>
 
                     <div class="form-actions">
-                        <div class="contact-actions">
-                            <a class="btn btn-gold" id="waQuick" href="#">שלח הודעה</a>
-                        </div>
+                        <button class="btn btn-gold btn-xl" type="submit">שלח הודעה</button>
                         <a class="btn btn-glass btn-xl" href="#gallery">חזור לגלריה</a>
                     </div>
                 </form>
@@ -368,6 +348,8 @@
             <div class="lightbox-caption" id="lightboxCaption"></div>
         </div>
     </div>
+
+    <div class="toast" id="successToast" role="status" aria-live="polite"></div>
 
     <script src="script.js"></script>
 </body>

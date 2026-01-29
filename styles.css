@@ -1168,3 +1168,56 @@ footer .copyright {
         aspect-ratio: 16 / 9;
     }
 }
+
+/* ===== Form UX Enhancements (Success / Error / Loading) ===== */
+
+.form-status {
+    margin-top: 14px;
+    padding: 14px 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(17, 17, 19, .12);
+    background: rgba(255, 255, 255, .78);
+    color: rgba(18, 18, 21, .85);
+    font-size: 14px;
+    line-height: 1.7;
+    display: none;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .08);
+}
+
+.form-status.success {
+    display: block;
+    border-color: rgba(199, 163, 95, .45);
+    background: linear-gradient(180deg, rgba(255, 255, 255, .95), rgba(251, 248, 242, .9));
+}
+
+.form-status.error {
+    display: block;
+    border-color: rgba(190, 60, 60, .45);
+    background: rgba(255, 235, 235, .85);
+    color: rgba(120, 30, 30, .95);
+}
+
+.form-loading {
+    pointer-events: none;
+    opacity: .7;
+}
+
+.form-loading .btn {
+    filter: grayscale(.2);
+    cursor: wait;
+}
+
+/* Inputs validation look */
+input.error,
+textarea.error,
+select.error {
+    border-color: rgba(190, 60, 60, .55) !important;
+    background: rgba(255, 235, 235, .7);
+}
+
+/* Smooth success highlight */
+.form-status.success::before {
+    content: "✓ ";
+    font-weight: 900;
+    color: rgba(199, 163, 95, .9);
+}
