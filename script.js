@@ -71,7 +71,7 @@ const galleryItems = [...document.querySelectorAll(".lightbox-item")];
 let currentIndex = 0;
 
 function openLightbox(index) {
-    if (!lightbox || !lightboxImg || !lightboxCaption) return;
+    if (!lightbox || !lightboxImg) return;
     if (!galleryItems.length) return;
 
     const item = galleryItems[index];
@@ -79,8 +79,10 @@ function openLightbox(index) {
     if (!img) return;
 
     lightboxImg.src = item.dataset.full || img.src;
-    lightboxCaption.textContent = img.alt || "";
 
+    if (lightboxCaption) {
+        lightboxCaption.textContent = "";
+    }
     lightbox.classList.add("open");
     lightbox.setAttribute("aria-hidden", "false");
     currentIndex = index;
