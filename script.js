@@ -328,3 +328,57 @@ if (emailForm) {
         });
     });
 }
+
+(() => {
+    const lightbox = document.getElementById("lightbox");
+    const inner = document.querySelector(".lightbox-inner");
+    if (!lightbox || !inner) return;
+
+    let startX = 0;
+    let startY = 0;
+    let isTouch = false;
+
+    const prevBtn = document.querySelector(".lb-prev");
+    const nextBtn = document.querySelector(".lb-next");
+
+    function isOpen() {
+        return lightbox.classList.contains("open");
+    }
+
+    inner.addEventListener("touchstart", (e) => {
+        if (!isOpen()) return;
+        const t = e.touches[0];
+        startX = t.clientX;
+        startY = t.clientY;
+        isTouch = true;
+    }, { passive: true });
+
+    inner.addEventListener("touchmove", (e) => {
+        if (!isOpen() || !isTouch) return;
+        const t = e.touches[0];
+        const dx = Math.abs(t.clientX - startX);
+        const dy = Math.abs(t.clientY - startY);
+
+        if (dx > dy) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+
+    inner.addEventListener("touchend", (e) => {
+        if (!isOpen() || !isTouch) return;
+        isTouch = false;
+
+        const t = e.changedTouches[0];
+        const dx = t.clientX - startX;
+        const dy = t.clientY - startY;
+
+        if (Math.abs(dx) < 45) return;
+        if (Math.abs(dx) < Math.abs(dy)) return;
+
+        if (dx < 0) {
+            nextBtn && nextBtn.click();
+        } else {
+            prevBtn && prevBtn.click();
+        }
+    }, { passive: true });
+})();
