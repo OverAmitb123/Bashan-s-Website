@@ -165,7 +165,7 @@ function buildWhatsAppMessage() {
 
 function openWhatsApp() {
     const msg = buildWhatsAppMessage();
-    const phoneNumber = "972528522320"; // החלף למספר שלך (כולל קידומת, בלי +)
+    const phoneNumber = "972502642379"; // החלף למספר שלך (כולל קידומת, בלי +)
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(msg)}`;
     window.open(url, "_blank", "noopener,noreferrer");
 }

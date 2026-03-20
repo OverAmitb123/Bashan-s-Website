@@ -1141,6 +1141,21 @@ footer .copyright {
     gap: 14px;
 }
 
+.whatsapp-btn {
+    transition: background .25s ease, color .25s ease, box-shadow .25s ease, transform .25s ease, border-color .25s ease;
+}
+
+.whatsapp-btn:hover {
+    background: #25d366;
+    color: #ffffff;
+    border-color: #25d366;
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.65), 0 12px 30px rgba(37, 211, 102, 0.35);
+    transform: translateY(-2px);
+}
+
+.whatsapp-btn:hover::before {
+    opacity: 0;
+}
 
 /* =========================================================
    21) RESPONSIVE — נקי (בלי כפילויות ובלי דריסות מיותרות)
