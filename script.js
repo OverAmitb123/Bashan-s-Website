@@ -153,11 +153,7 @@ function buildWhatsAppMessage() {
     const details = getFieldValue("details");
 
     const lines = [
-        "שלום, אשמח להזמין 👋",
-        name ? `שם: ${name}` : "",
-        phone ? `טלפון: ${phone}` : "",
-        type ? `מוצר: ${type}` : "",
-        details ? `פרטים: ${details}` : ""
+        "היי שלום, אשמח להזמין ִ",
     ].filter(Boolean);
 
     return lines.join("\n");
