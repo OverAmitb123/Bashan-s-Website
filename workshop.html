@@ -4,211 +4,340 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bashan’s | סדנאות</title>
-    <meta name="description" content="סדנאות בטון עד הבית – חוויה יצירתית וללא צורך בניסיון. Bashan’s." />
+    <title>סדנאות בטון עד הבית | Bashan's Designs</title>
+    <meta name="description" content="סדנאות בטון עד הבית — חוויה יצירתית, אישית ומיוחדת. Bashan's מגיעים עם כל הציוד, מלווים ומדריכים. מתאים לכל אחד, ללא ניסיון קודם." />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Bashan's Designs" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <script src="script.js" defer></script>
+    <meta property="og:title" content="סדנאות בטון עד הבית | Bashan's Designs" />
+    <meta property="og:description" content="חוויה יצירתית ואישית עם Bashan's — מגיעים אליכם עם הכל, יוצרים יחד." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bashanss.com/workshop.html" />
+    <meta property="og:image" content="https://bashanss.com/img/pic28.jpg" />
+    <meta property="og:locale" content="he_IL" />
+
+    <link rel="canonical" href="https://bashanss.com/workshop.html" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <link rel="icon" href="img/favicon.png" type="image/png" />
     <link rel="stylesheet" href="styles.css" />
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D190DLLLY9"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1" defer></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "סדנאות בטון עד הבית — Bashan's Designs",
+      "description": "סדנאות יצירה בבטון המגיעות עד ביתך — ללא ניסיון קודם, כולל כל הציוד והחומרים",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Bashan's Designs",
+        "url": "https://bashanss.com",
+        "telephone": "+972502642379"
+      },
+      "areaServed": { "@type": "Country", "name": "Israel" },
+      "serviceType": "Creative Concrete Workshop"
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1D90DLLLY9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-1D90DLLLY9');
+    </script>
     <script src="https://cdn.userway.org/widget.js" data-account="gUdNFefWIx" defer></script>
 </head>
-<!-- Google tag (gtag.js) בובי אני אוהב אותך-->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1D90DLLLY9"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-1D90DLLLY9');
-</script>
 
 <body>
-    <nav class="navbar container" aria-label="ניווט ראשי">
-        <a href="#">
-            <img id="logo" src="img/logo.png" alt="Bashan’s Logo" width="160" height="160" decoding="async">
-        </a>
 
-        <button class="nav-toggle" type="button" aria-label="פתח תפריט" aria-expanded="false" aria-controls="navMenu">
-            <span class="nav-toggle-lines"></span>
-        </button>
+    <!-- ══════════════════════════════════ HEADER ══ -->
+    <header class="site-header" id="top">
+        <nav class="navbar container" aria-label="ניווט ראשי">
+            <a href="index.html" aria-label="Bashan's Designs — דף הבית">
+                <img id="logo" src="img/logo.png" alt="Bashan's Designs" width="160" height="50" decoding="async" />
+            </a>
 
-        <div class="nav-menu" id="navMenu">
-            <a class="nav-link" href="#about">הסיפור</a>
-            <a class="nav-link" href="#signature">הייחוד</a>
-            <a class="nav-link" href="#order">הזמנה</a>
-            <a class="nav-link" href="#contact">יצירת קשר</a>
+            <button class="nav-toggle" type="button" aria-label="פתח תפריט" aria-expanded="false" aria-controls="navMenu">
+                <span class="nav-toggle-lines"></span>
+            </button>
 
-            <div class="nav-cta">
-                <a class="btn btn-ghost" href="#gallery">צפה בגלריה</a>
-                <a class="btn btn-gold" href="#contact">התחלת הזמנה</a>
+            <div class="nav-menu" id="navMenu">
+                <a class="nav-link" href="index.html#about">הסיפור</a>
+                <a class="nav-link" href="index.html#signature">הייחוד</a>
+                <a class="nav-link" href="index.html#order">הזמנה</a>
+                <a class="nav-link nav-link--active" href="workshop.html">סדנאות</a>
+                <a class="nav-link" href="index.html#contact">יצירת קשר</a>
+                <div class="nav-cta">
+                    <a class="btn btn-ghost" href="catalog.html">קטלוג</a>
+                    <a class="btn btn-gold" id="waNavWorkshop" href="#">לתיאום סדנה</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ══════════════════════════════════ HERO ══ -->
+        <section class="wsr-hero" id="workshops">
+            <figure class="wsr-hero-bg lightbox-item" data-full="img/pic28.jpg" tabindex="0">
+                <img src="img/pic28.jpg" alt="סדנת בטון של Bashan's" loading="eager" />
+            </figure>
+            <div class="wsr-hero-inner">
+                <div class="container">
+                    <span class="wsr-eyebrow">✦ חוויה יצירתית ייחודית</span>
+                    <h1 class="wsr-hero-title">סדנאות בטון<br><em>אצלכם בבית</em></h1>
+                    <p class="wsr-hero-lead">Bashan's מגיעים עם כל הציוד, החומרים והתבניות — וביחד יוצרים חוויה שלא תשכחו. ללא ניסיון קודם, ללא לחץ.</p>
+                    <div class="wsr-hero-actions">
+                        <a class="btn btn-gold btn-xl" id="waWorkshopHero" href="#">לתיאום סדנה בוואטסאפ</a>
+                        <a class="btn btn-glass btn-xl" href="#wsr-gallery">לצפייה בתמונות</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════ STATS ══ -->
+        <div class="container wsr-stats-wrap">
+            <div class="stats-strip" data-reveal>
+                <div class="stat-item">
+                    <span class="stat-num" data-count="50">50+</span>
+                    <span class="stat-label">סדנאות הועברו</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num" data-count="300">300+</span>
+                    <span class="stat-label">משתתפים מרוצים</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">5 ★</span>
+                    <span class="stat-label">דירוג ממוצע</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">100%</span>
+                    <span class="stat-label">ללא ניסיון קודם</span>
+                </div>
             </div>
         </div>
-    </nav>
-    <section class="section container workshop-page" id="workshops">
-        <div class="section-head" data-reveal>
-            <h1 class="section-title">סדנאות בטון אצלך</h1>
-            <p class="section-subtitle">
-                חוויה יצירתית, נעימה ומיוחדת — אנחנו מגיעים עד אליך עם כל החומרים, הכלים והתבניות,
-                ומעבירים סדנת בטון חווייתית שמתאימה גם למי שאין לו שום ניסיון קודם.
-            </p>
+
+        <!-- ══════════════════════════════════ SPLIT — מה כולל ══ -->
+        <div class="container wsr-split" data-reveal>
+            <div class="wsr-split-text">
+                <span class="wsr-eyebrow wsr-eyebrow--dark">✦ הסדנה</span>
+                <h2 class="wsr-heading">מה כולל המפגש?</h2>
+                <p class="wsr-text">
+                    אנחנו מביאים איתנו את כל מה שצריך — חומרים, תבניות, ציוד וליווי מלא לאורך כל הסדנה.
+                    המשתתפים נהנים מחוויה מסודרת, נעימה ומודרכת מהשלב הראשון ועד התוצר הסופי.
+                </p>
+                <div class="wsr-pills">
+                    <span class="workshop-pill">✓ ללא ניסיון קודם</span>
+                    <span class="workshop-pill">✓ מגיעים עד אליכם</span>
+                    <span class="workshop-pill">✓ כולל כל הציוד</span>
+                    <span class="workshop-pill">✓ חוויה אישית ומיוחדת</span>
+                </div>
+            </div>
+            <figure class="wsr-split-img media lightbox-item" data-full="img/pic29.jpg" tabindex="0">
+                <img src="img/pic29.jpg" alt="סדנת בטון — רגע יצירה" loading="lazy" />
+            </figure>
         </div>
 
-        <div class="workshop-hero">
-            <div class="workshop-hero-content glass" data-reveal>
-                <h2 class="workshop-title">חוויה מעוצבת שמגיעה עד הבית</h2>
-                <p class="workshop-text">
-                    הסדנאות של Bashan’s נבנו כדי לאפשר לכל אחד ואחת ליצור, ליהנות ולהתחבר לעולם העיצוב והחומר —
-                    בלי ידע מוקדם ובלי צורך בהכנות מיוחדות. אנחנו מגיעים למיקום שתבחרו, מלווים אתכם לאורך כל התהליך,
-                    ויוצרים יחד חוויה אסתטית, קלילה ובלתי נשכחת.
+        <!-- ══════════════════════════════════ SPLIT — למי זה ══ -->
+        <div class="container wsr-split wsr-split--flip" data-reveal>
+            <figure class="wsr-split-img media lightbox-item" data-full="img/pic30.jpg" tabindex="0">
+                <img src="img/pic30.jpg" alt="קבוצה בסדנת בטון" loading="lazy" />
+            </figure>
+            <div class="wsr-split-text">
+                <span class="wsr-eyebrow wsr-eyebrow--dark">✦ למי זה מתאים</span>
+                <h2 class="wsr-heading">לכולם.<br>ממש לכולם.</h2>
+                <p class="wsr-text">
+                    לימי הולדת, מפגשי חברות, ערבי יצירה, זוגות, משפחות, אירועים קטנים —
+                    כל מי שרוצה חוויה מיוחדת ושונה באווירה אישית ונעימה.
+                    אין צורך בשום ניסיון קודם. אנחנו מדריכים, מסבירים ומלווים לאורך כל הדרך.
                 </p>
+            </div>
+        </div>
 
-                <div class="workshop-tags">
-                    <span class="workshop-pill">אין צורך בניסיון</span>
+        <!-- ══════════════════════════════════ INCLUDES ══ -->
+        <div class="container wsr-section">
+            <div class="wsr-section-head" data-reveal>
+                <span class="wsr-eyebrow wsr-eyebrow--dark">✦ מה מגיע איתנו</span>
+                <h2 class="wsr-heading">אתם פותחים את הדלת —<br>אנחנו דואגים לשאר</h2>
+            </div>
+            <div class="wsr-includes" data-stagger>
+                <div class="wsr-include-item" data-reveal>
+                    <div class="wsr-include-icon" aria-hidden="true"><i class="ph ph-shapes"></i></div>
+                    <div>
+                        <strong>תבניות וכלי עיצוב מקצועיים</strong>
+                        <p>מבחר תבניות ייחודיות ליצירת כלי בטון בצורות וגדלים שונים</p>
+                    </div>
+                </div>
+                <div class="wsr-include-item" data-reveal>
+                    <div class="wsr-include-icon" aria-hidden="true"><i class="ph ph-stack"></i></div>
+                    <div>
+                        <strong>חומרים מקצועיים באיכות גבוהה</strong>
+                        <p>בטון, פיגמנטים לצביעה, ציוד עיבוד וגימור — הכל מוכן ומדוד</p>
+                    </div>
+                </div>
+                <div class="wsr-include-item" data-reveal>
+                    <div class="wsr-include-icon" aria-hidden="true"><i class="ph ph-graduation-cap"></i></div>
+                    <div>
+                        <strong>הדרכה אישית מלאה לאורך הסדנה</strong>
+                        <p>ליווי שלב אחר שלב, הסברים ברורים ונגישים לכולם — גם ללא ניסיון</p>
+                    </div>
+                </div>
+                <div class="wsr-include-item" data-reveal>
+                    <div class="wsr-include-icon" aria-hidden="true"><i class="ph ph-toolbox"></i></div>
+                    <div>
+                        <strong>כל הציוד הנלווה</strong>
+                        <p>כפפות, סינרים, ציוד הגנה — אתם פשוט פותחים את הדלת ואנחנו דואגים לשאר</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══════════════════════════════════ PROCESS ══ -->
+        <div class="wsr-process-bg">
+            <div class="container wsr-section">
+                <div class="wsr-section-head" data-reveal>
+                    <span class="wsr-eyebrow wsr-eyebrow--dark">✦ איך זה עובד</span>
+                    <h2 class="wsr-heading">3 צעדים ואתם בפנים</h2>
+                </div>
+                <div class="wsr-process" data-stagger>
+                    <div class="wsr-step" data-reveal>
+                        <div class="wsr-step-num">01</div>
+                        <h3>מתאמים מקום וזמן</h3>
+                        <p>שולחים הודעה בוואטסאפ, קובעים תאריך ומיקום שמתאים לכם — אנחנו מגיעים.</p>
+                    </div>
+                    <div class="wsr-step-arrow" aria-hidden="true">←</div>
+                    <div class="wsr-step" data-reveal>
+                        <div class="wsr-step-num">02</div>
+                        <h3>מגיעים עם הכל</h3>
+                        <p>חומרים, תבניות, ציוד והדרכה — הכל מגיע מוכן ומסודר. אתם פשוט פותחים את הדלת.</p>
+                    </div>
+                    <div class="wsr-step-arrow" aria-hidden="true">←</div>
+                    <div class="wsr-step" data-reveal>
+                        <div class="wsr-step-num">03</div>
+                        <h3>יוצרים ונהנים</h3>
+                        <p>חוויה כיפית, רגועה ויצירתית — ובסוף כל אחד לוקח הביתה יצירה שיצר בעצמו.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══════════════════════════════════ GALLERY ══ -->
+        <div class="container wsr-section" id="wsr-gallery">
+            <div class="wsr-section-head" data-reveal>
+                <span class="wsr-eyebrow wsr-eyebrow--dark">✦ גלריה</span>
+                <h2 class="wsr-heading">רגעים מהסדנאות</h2>
+                <p class="wsr-sub">כל סדנה היא חוויה בפני עצמה — ריח הבטון, המגע בחומר, והאנשים שסביבך.</p>
+            </div>
+            <div class="wsr-gallery">
+                <figure class="media wsr-gal-item wsr-gal-big lightbox-item" data-reveal data-full="img/pic31.jpg" tabindex="0">
+                    <img src="img/pic31.jpg" alt="סדנת בטון — רגע יצירה" loading="lazy" />
+                </figure>
+                <figure class="media wsr-gal-item lightbox-item" data-reveal data-full="img/pic32.jpg" tabindex="0">
+                    <img src="img/pic32.jpg" alt="עבודה עם חומרים" loading="lazy" />
+                </figure>
+                <figure class="media wsr-gal-item lightbox-item" data-reveal data-full="img/pic33.jpg" tabindex="0">
+                    <img src="img/pic33.jpg" alt="תוצר סופי" loading="lazy" />
+                </figure>
+                <figure class="media wsr-gal-item lightbox-item" data-reveal data-full="img/pic34.jpg" tabindex="0">
+                    <img src="img/pic34.jpg" alt="כלי בטון" loading="lazy" />
+                </figure>
+                <figure class="media wsr-gal-item lightbox-item" data-reveal data-full="img/pic35.jpg" tabindex="0">
+                    <img src="img/pic35.jpg" alt="יצירה בסדנה" loading="lazy" />
+                </figure>
+                <figure class="media wsr-gal-item lightbox-item" data-reveal data-full="img/pic28.jpg" tabindex="0">
+                    <img src="img/pic28.jpg" alt="חוויית הסדנה" loading="lazy" />
+                </figure>
+            </div>
+        </div>
+
+        <!-- ══════════════════════════════════ TESTIMONIALS ══ -->
+        <div class="container wsr-section">
+            <div class="wsr-section-head" data-reveal>
+                <span class="wsr-eyebrow wsr-eyebrow--dark">✦ מה אומרים</span>
+                <h2 class="wsr-heading">המשתתפים מספרים</h2>
+            </div>
+            <div class="wsr-testimonials" data-stagger>
+                <div class="wsr-testimonial glass" data-reveal>
+                    <div class="testimonial-stars" aria-label="דירוג 5 כוכבים">★★★★★</div>
+                    <p class="wsr-quote">"חוויה מדהימה! הגיעו מוכנים עם הכל, הסבירו בצורה הכי נגישה, ויצרנו יחד משהו שאני כבר לא מפסיקה להתגאות בו. חובה לכולם!"</p>
+                    <div class="wsr-author">מיכל ר. <span>סדנת יום הולדת</span></div>
+                </div>
+                <div class="wsr-testimonial glass" data-reveal>
+                    <div class="testimonial-stars" aria-label="דירוג 5 כוכבים">★★★★★</div>
+                    <p class="wsr-quote">"הזמנו סדנה לאירוע גיבוש של הצוות — כולם פשוט אהבו. מקצועי, אישי, ובסוף יצאנו עם יצירות שכולם לקחו הביתה. מאוד מומלץ!"</p>
+                    <div class="wsr-author">דוד כ. <span>אירוע גיבוש צוותי</span></div>
+                </div>
+                <div class="wsr-testimonial glass" data-reveal>
+                    <div class="testimonial-stars" aria-label="דירוג 5 כוכבים">★★★★★</div>
+                    <p class="wsr-quote">"יצרתי כלי בטון לראשונה בחיי ולא האמנתי שאצליח. יצא מדהים! הסדנה הייתה חוויה שונה לגמרי — הרבה יותר כיפי ומרגש."</p>
+                    <div class="wsr-author">תמר ל. <span>סדנה פרטית</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══════════════════════════════════ CTA ══ -->
+        <div class="container wsr-section">
+            <div class="wsr-cta" data-reveal>
+                <span class="wsr-eyebrow wsr-eyebrow--dark">✦ בואו ניצור יחד</span>
+                <h2 class="wsr-cta-title">רוצים לקבוע סדנה?</h2>
+                <p class="wsr-cta-text">שלחו הודעה ונשמח לתאם איתכם חוויה מיוחדת — אצלכם בבית, בגינה, בעבודה, או בכל מקום שתבחרו.</p>
+                <div class="wsr-cta-pills">
+                    <span class="workshop-pill">מינימום 2 משתתפים</span>
+                    <span class="workshop-pill">ניתן להתאים לכל קבוצה</span>
                     <span class="workshop-pill">מגיעים עד אליכם</span>
-                    <span class="workshop-pill">כולל חומרים ותבניות</span>
-                    <span class="workshop-pill">חוויה יצירתית ומיוחדת</span>
                 </div>
-
-                <div class="workshop-actions">
-                    <a class="btn btn-gold btn-xl" href="#contact">לתיאום סדנה</a>
-                    <a class="btn btn-glass btn-xl" href="#workshop-gallery">לצפייה בתמונות</a>
-                </div>
-            </div>
-
-            <div class="workshop-main-image media bordered" data-reveal>
-                <div class="workshop-placeholder">תמונה ראשית של סדנה</div>
+                <a class="btn btn-gold btn-xl" id="waQuick" href="#">לתיאום בוואטסאפ ←</a>
             </div>
         </div>
 
-        <div class="workshop-grid">
-            <article class="workshop-card glass" data-reveal>
-                <h3 class="card-title">מה כולל המפגש?</h3>
-                <p class="card-text">
-                    אנחנו מביאים איתנו את כל מה שצריך: חומרים, תבניות, ציוד וליווי מלא לאורך הסדנה.
-                    המשתתפים נהנים מחוויה מסודרת, נעימה ומודרכת — מהשלב הראשון ועד התוצר הסופי.
-                </p>
-            </article>
+    </main>
 
-            <article class="workshop-card glass" data-reveal>
-                <h3 class="card-title">למי זה מתאים?</h3>
-                <p class="card-text">
-                    לימי הולדת, מפגשי חברות, ערבי יצירה, זוגות, משפחות, אירועים קטנים או כל מי שרוצה חוויה מיוחדת
-                    ושונה באווירה אישית ונעימה.
-                </p>
-            </article>
-
-            <article class="workshop-card glass" data-reveal>
-                <h3 class="card-title">צריך ניסיון קודם?</h3>
-                <p class="card-text">
-                    ממש לא. הסדנה בנויה כך שכל אחד יכול להשתתף, ליהנות וליצור — גם בלי רקע קודם בכלל.
-                    אנחנו מדריכים, מסבירים ומלווים אתכם לאורך כל הדרך.
-                </p>
-            </article>
-        </div>
-
-        <div class="workshop-flow bordered" data-reveal>
-            <div class="section-head">
-                <h2 class="section-title">איך זה עובד?</h2>
-            </div>
-
-            <div class="workshop-steps">
-                <div class="step">
-                    <div class="step-num">01</div>
-                    <div class="step-body">
-                        <h3 class="step-title">מתאמים מקום וזמן</h3>
-                        <p class="step-text">אתם בוחרים את המיקום שמתאים לכם, ואנחנו מגיעים אליו.</p>
-                    </div>
-                </div>
-
-                <div class="step">
-                    <div class="step-num">02</div>
-                    <div class="step-body">
-                        <h3 class="step-title">מגיעים עם כל הציוד</h3>
-                        <p class="step-text">חומרים, תבניות, ציוד והדרכה — הכל מגיע מוכן ומסודר.</p>
-                    </div>
-                </div>
-
-                <div class="step">
-                    <div class="step-num">03</div>
-                    <div class="step-body">
-                        <h3 class="step-title">יוצרים יחד</h3>
-                        <p class="step-text">נהנים מחוויה כיפית, רגועה ויצירתית עם ליווי אישי לאורך הדרך.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="workshop-gallery-wrap" id="workshop-gallery">
-            <div class="section-head" data-reveal>
-                <h2 class="section-title">רגעים מהסדנאות</h2>
-                <p class="section-subtitle">כאן תוכל לשים תמונות אמיתיות של הסדנאות.</p>
-            </div>
-
-            <div class="workshop-gallery">
-                <div class="media bordered workshop-frame" data-reveal>
-                    <div class="workshop-placeholder">תמונה 1</div>
-                </div>
-
-                <div class="media bordered workshop-frame" data-reveal>
-                    <div class="workshop-placeholder">תמונה 2</div>
-                </div>
-
-                <div class="media bordered workshop-frame" data-reveal>
-                    <div class="workshop-placeholder">תמונה 3</div>
-                </div>
-
-                <div class="media bordered workshop-frame" data-reveal>
-                    <div class="workshop-placeholder">תמונה 4</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="workshop-cta glass" data-reveal>
-            <div>
-                <h3 class="gallery-cta-title">רוצה לקבוע סדנה?</h3>
-                <p class="gallery-cta-sub">
-                    שלח הודעה ונשמח לתאם איתך חוויה מיוחדת, אסתטית ומלאת יצירה — אצלך בבית או בכל מקום שתבחר.
-                </p>
-            </div>
-
-            <a class="btn btn-gold btn-xl" href="#contact">לתיאום סדנה</a>
-        </div>
-    </section>
-
+    <!-- ══════════════════════════════════ SOCIALS ══ -->
     <section class="socials">
         <div class="container socials__inner">
             <span class="socials__label">עקבו אחרינו ברשתות</span>
-
             <div class="socials__icons">
-
-                <a href="https://www.instagram.com/bashans_desings" target="_blank" aria-label="Instagram"
-                    class="socialIcon">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+                <a href="https://www.instagram.com/bashans_desings" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="socialIcon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" loading="lazy" />
                 </a>
-
-                <a href="https://www.tiktok.com/@bashans_desings1" target="_blank" aria-label="TikTok"
-                    class="socialIcon">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">
+                <a href="https://www.tiktok.com/@bashans_desings1" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="socialIcon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" loading="lazy" />
                 </a>
-
                 <a href="#" aria-label="Facebook" class="socialIcon">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" loading="lazy" />
                 </a>
-
             </div>
         </div>
     </section>
-    </main>
 
     <footer>
-        <p class="copyright"> כל הזכויות שמורות | Bashan’s ©</p>
+        <p class="copyright">כל הזכויות שמורות | Bashan's Designs ©</p>
         <p class="copyright">האתר נבנה ועוצב על ידי Bel Studio ©</p>
+        <div class="footer-legal">
+            <a href="privacy.html">מדיניות פרטיות</a>
+            <a href="terms.html">תנאי שימוש</a>
+            <a href="accessibility.html">הצהרת נגישות</a>
+        </div>
     </footer>
 
     <a class="to-top" href="#top" aria-label="חזרה לראש הדף">↑</a>
-</body>
 
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="lb-btn lb-close" type="button" aria-label="סגור">✕</button>
+        <button class="lb-btn lb-prev" type="button" aria-label="הקודם">‹</button>
+        <button class="lb-btn lb-next" type="button" aria-label="הבא">›</button>
+        <div class="lightbox-inner" role="dialog" aria-modal="true" aria-label="תצוגת תמונה">
+            <img class="lightbox-img" id="lightboxImg" alt="" />
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+    </div>
+
+    <div class="toast" id="successToast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+</body>
 </html>

@@ -342,7 +342,7 @@ img {
     grid-template-columns: 1.05fr .95fr;
     gap: 26px;
     padding-top: 34px;
-    align-items: stretch;
+    align-items: center;
 }
 
 .hero-title {
@@ -390,7 +390,6 @@ img {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    height: 100%;
 }
 
 
@@ -406,7 +405,12 @@ img {
 }
 
 .media-hero {
-    min-height: 360px;
+    max-height: 690px;
+    aspect-ratio: 3 / 4;
+}
+
+.media-hero img {
+    object-position: center 60%;
 }
 
 .glass {
@@ -997,20 +1001,6 @@ footer .copyright {
 }
 
 
-/* =========================
-   18) REVEAL ANIMATION
-   ========================= */
-[data-reveal] {
-    opacity: 0;
-    transform: translateY(12px);
-    transition: opacity .7s ease, transform .7s ease;
-}
-
-.revealed {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 
 /* =========================
    19) LIGHTBOX (כולל תיקון הכפתורים!)
@@ -1310,6 +1300,383 @@ footer .copyright {
     }
 }
 
+/* =========================================================
+   PREMIUM ENHANCEMENTS v2
+   ========================================================= */
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+    [data-reveal] {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* ── Keyframes ── */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-8px); }
+}
+
+@keyframes glow-pulse {
+    0%, 100% { box-shadow: 0 12px 28px rgba(199,163,95,.22); }
+    50%       { box-shadow: 0 18px 44px rgba(199,163,95,.42); }
+}
+
+@keyframes shimmer-sweep {
+    from { transform: translateX(130%) rotate(18deg); }
+    to   { transform: translateX(-130%) rotate(18deg); }
+}
+
+/* Gold btn shimmer on hover */
+.btn-gold:hover::before {
+    animation: shimmer-sweep .65s ease forwards;
+}
+
+/* Primary CTA subtle glow pulse */
+.btn-gold.btn-xl {
+    animation: glow-pulse 3.5s ease infinite;
+}
+.btn-gold.btn-xl:hover {
+    animation: none;
+}
+
+/* ── Section divider ── */
+.section-divider {
+    width: 52px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold2));
+    border-radius: 999px;
+    margin: 12px 0 0;
+}
+
+/* ── Eyebrow label ── */
+.page-hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(199,163,95,.28);
+    background: rgba(199,163,95,.08);
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(18,18,21,.78);
+    margin-bottom: 16px;
+    letter-spacing: .05em;
+}
+
+/* ── About grid + image ── */
+.about-image {
+    border-radius: var(--radius2);
+    overflow: hidden;
+    min-height: 300px;
+    border: 1px solid rgba(17,17,19,.12);
+    box-shadow: var(--shadow);
+}
+
+/* ── Workshop teaser on homepage ── */
+.workshop-teaser {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    padding: 32px;
+    overflow: hidden;
+}
+
+.workshop-teaser-content {
+    flex: 1;
+}
+
+.workshop-teaser-image {
+    flex: 0 0 360px;
+    border-radius: var(--radius2);
+    overflow: hidden;
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.workshop-teaser-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 24px 60px rgba(0,0,0,.12);
+}
+
+@media (max-width: 800px) {
+    .workshop-teaser {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+    .workshop-teaser-image {
+        flex: unset;
+        width: 100%;
+        min-height: 220px !important;
+    }
+}
+
+/* ── Stats strip ── */
+.stats-strip {
+    display: flex;
+    border-radius: var(--radius2);
+    border: 1px solid rgba(17,17,19,.10);
+    background: rgba(255,255,255,.75);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.stat-item {
+    flex: 1;
+    text-align: center;
+    padding: 30px 20px;
+    position: relative;
+}
+
+.stat-item + .stat-item::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background: rgba(17,17,19,.10);
+}
+
+.stat-num {
+    display: block;
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--text), var(--gold));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1.1;
+}
+
+.stat-label {
+    display: block;
+    font-size: 13px;
+    color: rgba(18,18,21,.65);
+    margin-top: 6px;
+    font-weight: 600;
+}
+
+/* ── Testimonials ── */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.testimonial-card {
+    padding: 24px;
+}
+
+.testimonial-stars {
+    font-size: 18px;
+    color: var(--gold);
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+}
+
+.testimonial-text {
+    margin: 0 0 18px;
+    color: rgba(18,18,21,.78);
+    line-height: 1.85;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.testimonial-author {
+    font-weight: 900;
+    font-size: 14px;
+}
+
+.testimonial-role {
+    font-size: 12px;
+    color: rgba(18,18,21,.55);
+    margin-top: 3px;
+}
+
+/* ── Inclusions list ── */
+.inclusion-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.inclusion-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px;
+    border-radius: 16px;
+    background: rgba(255,255,255,.60);
+    border: 1px solid rgba(17,17,19,.08);
+    transition: transform .22s ease, background .22s ease, border-color .22s ease;
+}
+
+.inclusion-item:hover {
+    transform: translateX(-3px);
+    background: rgba(255,255,255,.88);
+    border-color: rgba(199,163,95,.20);
+}
+
+.inclusion-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 13px;
+    background: linear-gradient(135deg, var(--gold), var(--gold2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    font-size: 17px;
+}
+
+.inclusion-text strong {
+    display: block;
+    font-weight: 900;
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.inclusion-text span {
+    color: rgba(18,18,21,.65);
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+/* ── Workshop enhanced gallery layout ── */
+.workshop-gallery-enhanced {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 14px;
+}
+
+.workshop-gallery-enhanced-right {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* ── Active nav link ── */
+.nav-link--active {
+    color: rgba(18,18,21,.95) !important;
+    background: rgba(199,163,95,.10);
+    border-radius: 12px;
+}
+
+/* ── Legal page content ── */
+.legal-page-wrap {
+    padding: 50px 0 90px;
+}
+
+.legal-content {
+    max-width: 72ch;
+}
+
+.legal-content h2 {
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: 900;
+    margin: 36px 0 10px;
+    color: var(--text);
+}
+
+.legal-content h2:first-of-type {
+    margin-top: 0;
+}
+
+.legal-content p,
+.legal-content li {
+    color: rgba(18,18,21,.78);
+    line-height: 2;
+    font-size: 15px;
+}
+
+.legal-content ul {
+    padding-inline-start: 22px;
+    margin: 8px 0 16px;
+}
+
+.legal-content li {
+    margin-bottom: 8px;
+}
+
+.legal-content a {
+    color: var(--gold);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.legal-content a:hover {
+    color: rgba(199,163,95,.80);
+}
+
+.legal-last-updated {
+    font-size: 12px;
+    color: rgba(18,18,21,.50);
+    margin-top: 6px;
+    display: block;
+}
+
+/* ── Footer legal links ── */
+.footer-legal {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.12);
+}
+
+.footer-legal a {
+    color: rgba(255,255,255,.55);
+    font-size: 12px;
+    transition: color .2s ease;
+}
+
+.footer-legal a:hover {
+    color: rgba(255,255,255,.88);
+}
+
+/* ── Responsive for new components ── */
+@media (max-width: 980px) {
+    .stats-strip {
+        flex-wrap: wrap;
+    }
+    .stat-item {
+        flex: 1 1 50%;
+    }
+    .stat-item:nth-child(2)::before {
+        display: none;
+    }
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    .workshop-gallery-enhanced {
+        grid-template-columns: 1fr;
+    }
+    .workshop-gallery-enhanced-right {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 520px) {
+    .stat-item {
+        flex: 1 1 100%;
+    }
+    .stat-item + .stat-item::before {
+        display: none;
+    }
+    .workshop-gallery-enhanced-right {
+        flex-direction: column;
+    }
+}
+
 /* ========================================
    WORKSHOPS PAGE
 ======================================== */
@@ -1546,12 +1913,12 @@ footer .copyright {
 @keyframes workshopFloatIn {
     from {
         opacity: 0;
-        transform: translateY(22px) scale(.985);
+        transform: translateY(12px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: translateY(0);
     }
 }
 
@@ -1643,5 +2010,1459 @@ footer .copyright {
 
     .workshop-placeholder {
         min-height: 220px;
+    }
+}
+
+/* =========================================================
+   VISUAL POLISH v3 — Proportions, Rhythm & Motion
+   Full override for cards, spacing, animations, depth.
+   ========================================================= */
+
+
+/* ── Easing curve token ─────────────────────────────────── */
+:root {
+    --ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+    --shadow-lift: 0 28px 70px rgba(0, 0, 0, .13);
+    --shadow-card: 0 12px 38px rgba(0, 0, 0, .08);
+}
+
+
+/* ── Reveal animation ────────────────────────────────────── */
+[data-reveal] {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity .7s ease, transform .7s ease;
+}
+
+.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ── Stagger — slightly wider intervals ──────────────────── */
+[data-stagger] > *:nth-child(1) { transition-delay: 0.00s; }
+[data-stagger] > *:nth-child(2) { transition-delay: 0.12s; }
+[data-stagger] > *:nth-child(3) { transition-delay: 0.24s; }
+[data-stagger] > *:nth-child(4) { transition-delay: 0.36s; }
+[data-stagger] > *:nth-child(5) { transition-delay: 0.48s; }
+[data-stagger] > *:nth-child(6) { transition-delay: 0.60s; }
+
+
+/* ── Section rhythm — more breathing room ───────────────── */
+.section {
+    padding: 96px 0;
+}
+
+.section-head {
+    margin-bottom: 40px;
+}
+
+.section-subtitle {
+    margin-top: 12px;
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+
+/* ── Hero image — continuous float ──────────────────────── */
+/* Applied to figure (no hover transform on media-hero) */
+.hero-visual .media-hero {
+    animation: float 7s ease-in-out 1.6s infinite;
+    will-change: transform;
+}
+
+
+/* ── Glass depth — inner radial glow ────────────────────── */
+.glass {
+    background:
+        radial-gradient(520px 180px at 60% -10%, rgba(199, 163, 95, .07), transparent 55%),
+        rgba(255, 255, 255, .74);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+}
+
+.bordered {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+
+/* ── CTA blocks — inner gold wash ───────────────────────── */
+.gallery-cta,
+.order-cta,
+.workshop-cta,
+.catalog-bottom-cta {
+    background:
+        radial-gradient(700px 220px at 50% 0%, rgba(199, 163, 95, .09), transparent 55%),
+        rgba(255, 255, 255, .80);
+    border: 1px solid rgba(17, 17, 19, .08);
+    box-shadow: 0 18px 55px rgba(0, 0, 0, .09);
+}
+
+.gallery-cta  { padding: 28px 34px; margin-top: 20px; }
+.order-cta    { padding: 28px 34px; margin-top: 20px; }
+.workshop-cta { padding: 32px 36px; }
+
+.catalog-bottom-cta { padding: 28px 34px; }
+
+.gallery-cta-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+}
+
+
+/* ── About card — more interior space ───────────────────── */
+.about-card {
+    padding: 38px 40px;
+}
+
+.about-card .card-title {
+    font-size: 22px;
+    margin-bottom: 18px;
+    letter-spacing: -0.015em;
+}
+
+.about-card .card-text {
+    font-size: 15px;
+    line-height: 2.05;
+}
+
+/* About image hover zoom */
+.about-image {
+    overflow: hidden;
+    transition:
+        transform 0.45s var(--ease-spring),
+        box-shadow 0.45s ease;
+}
+
+.about-image:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lift);
+}
+
+.about-image img {
+    transition: transform 0.6s var(--ease-spring);
+}
+
+.about-image:hover img {
+    transform: scale(1.05);
+}
+
+
+/* ── Feature cards — taller, deeper, animated icon ──────── */
+.features {
+    gap: 16px;
+}
+
+.feature {
+    padding: 28px 26px 30px;
+    box-shadow: var(--shadow-card);
+    transition:
+        transform  0.38s var(--ease-spring),
+        box-shadow 0.38s ease,
+        border-color 0.25s ease,
+        background   0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Inner spotlight that fades in on hover */
+.feature::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(440px 160px at 50% -20%, rgba(199, 163, 95, .10), transparent 55%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+}
+
+.feature:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 26px 60px rgba(0, 0, 0, .12);
+    border-color: rgba(199, 163, 95, .32);
+    background: rgba(255, 255, 255, .95);
+}
+
+.feature:hover::before {
+    opacity: 1;
+}
+
+/* Icon bounce on card hover */
+.feature-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 15px;
+    font-size: 17px;
+    transition: transform 0.38s var(--ease-spring);
+    position: relative;
+    z-index: 1;
+}
+
+.feature:hover .feature-icon {
+    transform: scale(1.15) rotate(-6deg);
+}
+
+.feature-title {
+    font-size: 15px;
+    letter-spacing: -0.01em;
+    position: relative;
+    z-index: 1;
+}
+
+.feature-text {
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 1.88;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ── Gallery grid — breathable gap ──────────────────────── */
+.gallery-grid {
+    gap: 16px;
+}
+
+.media-gallery {
+    transition:
+        transform  0.38s var(--ease-spring),
+        box-shadow 0.38s ease;
+}
+
+.media-gallery img {
+    transition:
+        transform 0.55s var(--ease-spring),
+        filter    0.55s ease;
+}
+
+.media-gallery:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 28px 68px rgba(0, 0, 0, .15);
+}
+
+.media-gallery:hover img {
+    transform: scale(1.07);
+    filter: saturate(1.1) contrast(1.03) brightness(1.01);
+}
+
+
+/* ── Step cards — gold bottom bar on hover ───────────────── */
+.steps {
+    gap: 16px;
+}
+
+.step {
+    padding: 26px 24px;
+    box-shadow: var(--shadow-card);
+    transition:
+        transform  0.38s var(--ease-spring),
+        box-shadow 0.38s ease,
+        border-color 0.25s ease,
+        background   0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gold accent bar slides in from right on hover */
+.step::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    inset-inline: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold2));
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.42s var(--ease-spring);
+    border-radius: 0 0 var(--radius) var(--radius);
+}
+
+.step:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 58px rgba(0, 0, 0, .12);
+    border-color: rgba(199, 163, 95, .30);
+    background: rgba(255, 255, 255, .95);
+}
+
+.step:hover::after {
+    transform: scaleX(1);
+}
+
+.step-num {
+    font-size: 14px;
+    box-shadow: 0 10px 26px rgba(199, 163, 95, .28);
+}
+
+.step-title {
+    font-size: 15px;
+    letter-spacing: -0.01em;
+}
+
+.step-text {
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+
+/* ── Contact card ────────────────────────────────────────── */
+.contact-card {
+    padding: 38px 40px;
+}
+
+.contact-card .card-title {
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+
+/* ── Buttons — spring transitions ────────────────────────── */
+.btn {
+    transition:
+        transform  0.32s var(--ease-spring),
+        box-shadow 0.32s ease,
+        background  0.22s ease,
+        border-color 0.22s ease,
+        color 0.22s ease;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+}
+
+.btn-gold {
+    box-shadow: 0 8px 26px rgba(199, 163, 95, .30), 0 2px 8px rgba(199, 163, 95, .18);
+}
+
+.btn-gold:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 46px rgba(199, 163, 95, .36), 0 4px 14px rgba(199, 163, 95, .22);
+}
+
+.btn-ghost:hover,
+.btn-glass:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, .10);
+}
+
+.btn:active {
+    transform: translateY(0) scale(0.98) !important;
+    transition-duration: 0.1s;
+}
+
+
+/* ── Nav links — spring lift ─────────────────────────────── */
+.nav-link {
+    transition:
+        color      0.22s ease,
+        background 0.22s ease,
+        transform  0.32s var(--ease-spring);
+    font-weight: 500;
+}
+
+
+/* ── To-top button ───────────────────────────────────────── */
+.to-top {
+    transition:
+        transform  0.32s var(--ease-spring),
+        box-shadow 0.32s ease,
+        border-color 0.22s ease,
+        background   0.22s ease;
+}
+
+.to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 52px rgba(0, 0, 0, .14);
+    border-color: rgba(199, 163, 95, .34);
+}
+
+
+/* ── Social icons ────────────────────────────────────────── */
+.socialIcon {
+    transition:
+        transform  0.32s var(--ease-spring),
+        box-shadow 0.32s ease,
+        background   0.22s ease,
+        border-color 0.22s ease;
+}
+
+.socialIcon:hover {
+    transform: translateY(-5px) scale(1.06);
+    background: rgba(255, 255, 255, .97);
+    border-color: rgba(199, 163, 95, .32);
+    box-shadow: 0 22px 52px rgba(0, 0, 0, .13);
+}
+
+
+/* ── Workshop page ────────────────────────────────────────── */
+
+/* Remove the 100vh minimum that creates dead whitespace */
+.workshop-page {
+    gap: 72px;
+}
+
+.workshop-page > .section-head,
+.workshop-page > .workshop-hero,
+.workshop-page > .workshop-grid,
+.workshop-page > .workshop-flow,
+.workshop-page > .workshop-gallery-wrap,
+.workshop-page > .workshop-cta {
+    min-height: unset !important;
+    display: block;
+}
+
+/* Workshop card more generous padding */
+.workshop-hero-content,
+.workshop-card,
+.workshop-flow {
+    padding: 36px 38px;
+}
+
+/* Workshop title */
+.workshop-title {
+    font-size: clamp(28px, 3.2vw, 44px);
+    line-height: 1.12;
+    margin-bottom: 18px;
+    letter-spacing: -0.02em;
+}
+
+.workshop-text {
+    font-size: 15px;
+    line-height: 2.0;
+}
+
+/* Workshop hero gap */
+.workshop-hero {
+    gap: 28px;
+}
+
+/* Workshop tags */
+.workshop-tags {
+    gap: 10px;
+    margin-top: 26px;
+}
+
+.workshop-pill {
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    transition:
+        background   0.22s ease,
+        border-color 0.22s ease,
+        transform    0.28s var(--ease-spring);
+}
+
+.workshop-pill:hover {
+    background: rgba(255, 255, 255, .95);
+    border-color: rgba(199, 163, 95, .28);
+    transform: translateY(-2px);
+}
+
+/* Workshop actions */
+.workshop-actions {
+    margin-top: 30px;
+    gap: 14px;
+}
+
+/* Workshop grid gap */
+.workshop-grid {
+    gap: 16px;
+}
+
+/* Workshop card hover — more lift + shadow */
+.workshop-card {
+    transition:
+        transform  0.38s var(--ease-spring),
+        box-shadow 0.38s ease,
+        border-color 0.25s ease,
+        background   0.25s ease;
+}
+
+.workshop-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 30px 68px rgba(0, 0, 0, .13);
+    border-color: rgba(199, 163, 95, .34);
+    background: rgba(255, 255, 255, .96);
+}
+
+/* Workshop flow blocks */
+.workshop-flow {
+    transition:
+        transform  0.38s var(--ease-spring),
+        box-shadow 0.38s ease,
+        border-color 0.25s ease,
+        background   0.25s ease;
+}
+
+.workshop-flow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 26px 62px rgba(0, 0, 0, .11);
+    border-color: rgba(199, 163, 95, .24);
+    background: rgba(255, 255, 255, .94);
+}
+
+/* Steps inside workshop flow */
+.workshop-steps {
+    gap: 18px;
+    margin-top: 26px;
+}
+
+.workshop-flow .step {
+    background: rgba(255, 255, 255, .55);
+    border-color: rgba(17, 17, 19, .08);
+}
+
+.workshop-flow .step:hover {
+    background: rgba(255, 255, 255, .88);
+    border-color: rgba(199, 163, 95, .24);
+}
+
+/* Workshop main image — hover lift + zoom */
+.workshop-main-image {
+    overflow: hidden;
+    transition:
+        transform  0.45s var(--ease-spring),
+        box-shadow 0.45s ease;
+}
+
+.workshop-main-image img {
+    transition: transform 0.6s var(--ease-spring);
+}
+
+.workshop-main-image:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 34px 75px rgba(0, 0, 0, .14) !important;
+}
+
+.workshop-main-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Workshop gallery gap */
+.workshop-gallery {
+    gap: 16px;
+}
+
+/* Workshop gallery frames */
+.workshop-frame {
+    overflow: hidden;
+    transition:
+        transform  0.38s var(--ease-spring),
+        box-shadow 0.38s ease,
+        border-color 0.25s ease;
+}
+
+.workshop-frame img {
+    transition: transform 0.6s var(--ease-spring);
+}
+
+.workshop-frame:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 28px 65px rgba(0, 0, 0, .13);
+    border-color: rgba(199, 163, 95, .30);
+}
+
+.workshop-frame:hover img {
+    transform: scale(1.06);
+}
+
+/* Workshop CTA */
+.workshop-cta {
+    transition:
+        transform  0.38s var(--ease-spring),
+        box-shadow 0.38s ease,
+        border-color 0.25s ease;
+}
+
+.workshop-cta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 68px rgba(0, 0, 0, .12);
+    border-color: rgba(199, 163, 95, .28);
+}
+
+
+/* ── Testimonial cards ────────────────────────────────────── */
+.testimonial-card {
+    padding: 30px 32px;
+    transition:
+        transform  0.38s var(--ease-spring),
+        box-shadow 0.38s ease,
+        border-color 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative opening quote */
+.testimonial-card::before {
+    content: "\201C";
+    position: absolute;
+    top: 10px;
+    left: 22px;
+    font-size: 80px;
+    line-height: 1;
+    color: rgba(199, 163, 95, .12);
+    font-family: Georgia, serif;
+    pointer-events: none;
+    user-select: none;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 28px 62px rgba(0, 0, 0, .12);
+    border-color: rgba(199, 163, 95, .24);
+}
+
+.testimonial-stars {
+    font-size: 16px;
+    margin-bottom: 16px;
+    letter-spacing: 3px;
+}
+
+.testimonial-text {
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+
+/* ── Stats strip ────────────────────────────────────────── */
+.stat-item {
+    padding: 36px 22px;
+    transition: background 0.25s ease;
+    cursor: default;
+}
+
+.stat-item:hover {
+    background: rgba(199, 163, 95, .04);
+}
+
+
+/* ── Inclusion items ─────────────────────────────────────── */
+.inclusion-item {
+    padding: 18px 20px;
+    transition:
+        transform  0.32s var(--ease-spring),
+        background  0.22s ease,
+        border-color 0.22s ease,
+        box-shadow  0.32s ease;
+}
+
+.inclusion-item:hover {
+    transform: translateX(-4px);
+    background: rgba(255, 255, 255, .94);
+    border-color: rgba(199, 163, 95, .24);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+}
+
+
+/* ── Workshop teaser ─────────────────────────────────────── */
+.workshop-teaser {
+    padding: 36px 38px;
+    transition:
+        box-shadow 0.35s ease,
+        border-color 0.25s ease;
+}
+
+.workshop-teaser:hover {
+    box-shadow: 0 30px 70px rgba(0, 0, 0, .11);
+    border-color: rgba(199, 163, 95, .20);
+}
+
+
+/* ── Catalog grid gap ────────────────────────────────────── */
+.catalog-grid {
+    gap: 14px;
+}
+
+
+/* ── Responsive overrides ────────────────────────────────── */
+@media (max-width: 980px) {
+    .section {
+        padding: 76px 0;
+    }
+
+    .section-head {
+        margin-bottom: 32px;
+    }
+
+    .about-card {
+        padding: 30px 32px;
+    }
+
+    .contact-card {
+        padding: 30px 32px;
+    }
+
+    .gallery-cta,
+    .order-cta {
+        padding: 24px 28px;
+    }
+
+    .workshop-hero-content,
+    .workshop-card,
+    .workshop-flow {
+        padding: 28px 30px;
+    }
+}
+
+@media (max-width: 520px) {
+    .section {
+        padding: 60px 0;
+    }
+
+    .section-head {
+        margin-bottom: 26px;
+    }
+
+    .about-card {
+        padding: 24px 26px;
+    }
+
+    .contact-card {
+        padding: 24px 26px;
+    }
+
+    .gallery-cta,
+    .order-cta {
+        padding: 20px 22px;
+    }
+
+    .workshop-hero-content,
+    .workshop-card,
+    .workshop-flow,
+    .workshop-cta {
+        padding: 22px 24px;
+    }
+
+    /* Stop floating on mobile (performance) */
+    .hero-visual .media-hero {
+        animation: none;
+    }
+
+    /* No step bar accent on mobile */
+    .step::after {
+        display: none;
+    }
+
+    /* Reduce workshop gap */
+    .workshop-page {
+        gap: 50px;
+    }
+}
+
+
+/* =========================================================
+   PROPORTION REFINEMENT v4
+   Controlled aspect ratios, image sizing, card balance.
+   No blind enlargements — every dimension is intentional.
+   ========================================================= */
+
+/* ── 1. About section — image proportion, no grid-stretch ── */
+
+/* Don't stretch the image to match the tall text card height  */
+.about-image {
+    aspect-ratio: 4 / 3;    /* landscape, shorter than the text card — editorial */
+    align-self: start;       /* break out of grid stretch so aspect-ratio wins  */
+    min-height: unset;
+    height: auto;
+}
+
+/* ── 2. Workshop hero — image is start-aligned, portrait ─── */
+
+/* Hero content and image both align from the top — no forced equal-height */
+.workshop-hero {
+    align-items: start;
+}
+
+/* Portrait aspect-ratio keeps the image from stretching to text-block height */
+.workshop-main-image {
+    aspect-ratio: 5 / 6;
+    align-self: start;
+    min-height: unset;
+    display: block;          /* remove the display:flex that was causing stretch */
+}
+
+/* ── 3. Enhanced gallery — driven by left frame aspect-ratio ─ */
+
+/* Base workshop frame: 4/3 landscape for secondary gallery */
+.workshop-frame {
+    aspect-ratio: 4 / 3;
+    min-height: unset;
+}
+
+/* Left (2fr) frame: landscape editorial proportion drives row height.
+   Must come AFTER .workshop-frame to win the cascade at equal specificity. */
+.workshop-frame--main {
+    aspect-ratio: 3 / 2;
+    align-self: start;
+}
+
+/* Right stacked frames: fill the right column height equally */
+.workshop-frame--side {
+    flex: 1;
+    min-height: 0;           /* allow flex-shrink below min-content */
+    aspect-ratio: unset;     /* height comes from flex, not aspect-ratio */
+}
+
+/* ── 4. Workshop card padding — reduce for ⅓-width cards ─── */
+
+.workshop-hero-content,
+.workshop-card,
+.workshop-flow {
+    padding: 28px 30px;
+}
+
+/* ── 5. Workshop CTA padding — trim slightly ─────────────── */
+
+.workshop-cta {
+    padding: 28px 32px;
+}
+
+/* ── 6. Workshop steps inside flow — less vertical gap ────── */
+
+.workshop-steps {
+    gap: 14px;
+    margin-top: 20px;
+}
+
+/* ── 7. Stats strip — tighter height ────────────────────── */
+
+.stat-item {
+    padding: 28px 20px;
+}
+
+
+/* ── Responsive overrides for v4 ──────────────────────────── */
+
+@media (max-width: 980px) {
+
+    /* On tablet, enhanced gallery collapses to 1 col.
+       Left frame takes full width — landscape is fine.        */
+    .workshop-frame--main {
+        aspect-ratio: 3 / 2;
+        align-self: auto;
+    }
+
+    /* Right frames go side-by-side (existing CSS: flex-direction row).
+       Give them an aspect-ratio so they don't collapse.        */
+    .workshop-frame--side {
+        flex: 1;
+        aspect-ratio: 3 / 2;
+        min-height: 0;
+    }
+
+    /* Workshop hero image: shallower portrait on tablet */
+    .workshop-main-image {
+        aspect-ratio: 3 / 2;
+    }
+
+    /* About image: landscape on tablet (shorter row) */
+    .about-image {
+        aspect-ratio: 3 / 2;
+    }
+
+    .workshop-hero-content,
+    .workshop-card,
+    .workshop-flow {
+        padding: 22px 24px;
+    }
+
+    .workshop-cta {
+        padding: 22px 26px;
+    }
+}
+
+@media (max-width: 520px) {
+
+    /* Right frames go back to column stack on mobile */
+    .workshop-frame--side {
+        flex: unset;
+        aspect-ratio: 4 / 3;
+        width: 100%;
+    }
+
+    /* Workshop hero image: standard landscape on mobile */
+    .workshop-main-image {
+        aspect-ratio: 4 / 3;
+    }
+
+    /* About image: landscape — does not dominate on mobile */
+    .about-image {
+        aspect-ratio: 4 / 3;
+    }
+
+    .workshop-hero-content,
+    .workshop-card,
+    .workshop-flow,
+    .workshop-cta {
+        padding: 18px 20px;
+    }
+}
+
+
+/* =========================================================
+   WORKSHOP REDESIGN v2 (wsr-)
+   ========================================================= */
+
+/* ── Hero ─────────────────────────────────────────────── */
+.wsr-hero {
+    position: relative;
+    width: 100%;
+    height: 68vh;
+    min-height: 460px;
+    max-height: 700px;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.wsr-hero-bg {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    background: none;
+    cursor: zoom-in;
+}
+
+.wsr-hero-bg img {
+    object-position: center 30%;
+}
+
+.wsr-hero-inner {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(8, 6, 3, .85) 0%,
+        rgba(8, 6, 3, .30) 55%,
+        transparent 100%
+    );
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 52px;
+}
+
+.wsr-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .05em;
+    margin-bottom: 14px;
+}
+
+/* on dark background (hero) */
+.wsr-hero-inner .wsr-eyebrow {
+    border: 1px solid rgba(199, 163, 95, .55);
+    background: rgba(199, 163, 95, .15);
+    color: rgba(230, 207, 152, .95);
+}
+
+/* on light background */
+.wsr-eyebrow--dark {
+    border: 1px solid rgba(199, 163, 95, .30);
+    background: rgba(199, 163, 95, .09);
+    color: rgba(18, 18, 21, .75);
+}
+
+.wsr-hero-title {
+    margin: 0 0 18px;
+    font-size: clamp(36px, 6vw, 72px);
+    font-weight: 900;
+    line-height: 1.0;
+    color: #fff;
+    letter-spacing: -0.025em;
+}
+
+.wsr-hero-title em {
+    font-style: normal;
+    background: linear-gradient(135deg, var(--gold), var(--gold2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.wsr-hero-lead {
+    margin: 0 0 28px;
+    color: rgba(255, 255, 255, .80);
+    font-size: 16px;
+    line-height: 1.75;
+    max-width: 54ch;
+}
+
+.wsr-hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* ── Stats ──────────────────────────────────────────────── */
+.wsr-stats-wrap {
+    margin-top: 28px;
+    margin-bottom: 0;
+}
+
+/* ── Generic section spacing ─────────────────────────────── */
+.wsr-section {
+    padding: 80px 0;
+}
+
+/* ── Section head ────────────────────────────────────────── */
+.wsr-section-head {
+    text-align: center;
+    margin-bottom: 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wsr-heading {
+    margin: 10px 0 0;
+    font-size: clamp(26px, 3.5vw, 42px);
+    font-weight: 900;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+}
+
+.wsr-sub {
+    margin: 12px 0 0;
+    color: rgba(18, 18, 21, .65);
+    font-size: 15px;
+    line-height: 1.75;
+    max-width: 60ch;
+}
+
+.wsr-text {
+    margin: 0;
+    color: rgba(18, 18, 21, .72);
+    line-height: 1.9;
+    font-size: 15px;
+}
+
+/* ── Split sections ──────────────────────────────────────── */
+.wsr-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    padding: 80px 0;
+    border-bottom: 1px solid rgba(17, 17, 19, .08);
+}
+
+.wsr-split--flip {
+    padding-top: 72px;
+    padding-bottom: 72px;
+}
+
+.wsr-split-img {
+    border-radius: var(--radius2);
+    aspect-ratio: 4 / 3;
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid rgba(17, 17, 19, .12);
+    box-shadow: var(--shadow);
+    transition: transform .45s var(--ease-spring), box-shadow .45s ease;
+    cursor: zoom-in;
+}
+
+.wsr-split-img:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 32px 72px rgba(0, 0, 0, .13);
+}
+
+.wsr-split-text {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.wsr-split-text .wsr-heading {
+    text-align: right;
+    margin: 0;
+}
+
+.wsr-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* ── Includes ────────────────────────────────────────────── */
+.wsr-includes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.wsr-include-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 26px 28px;
+    background: rgba(255, 255, 255, .74);
+    border: 1px solid rgba(17, 17, 19, .10);
+    border-radius: var(--radius2);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, .07);
+    transition:
+        transform .32s var(--ease-spring),
+        box-shadow .32s ease,
+        border-color .22s ease;
+}
+
+.wsr-include-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 56px rgba(0, 0, 0, .11);
+    border-color: rgba(199, 163, 95, .28);
+}
+
+.wsr-include-icon {
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, var(--gold), var(--gold2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    box-shadow: 0 10px 24px rgba(199, 163, 95, .22);
+}
+
+.wsr-include-item strong {
+    display: block;
+    font-weight: 900;
+    font-size: 15px;
+    margin-bottom: 6px;
+    color: var(--text);
+}
+
+.wsr-include-item p {
+    margin: 0;
+    color: rgba(18, 18, 21, .68);
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+/* ── Process ─────────────────────────────────────────────── */
+.wsr-process-bg {
+    background:
+        radial-gradient(1000px 320px at 50% 50%, rgba(199, 163, 95, .10), transparent 60%),
+        rgba(255, 255, 255, .58);
+    border-top: 1px solid rgba(17, 17, 19, .08);
+    border-bottom: 1px solid rgba(17, 17, 19, .08);
+}
+
+.wsr-process {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+}
+
+.wsr-step {
+    flex: 1;
+    text-align: center;
+    padding: 36px 28px;
+    background: rgba(255, 255, 255, .82);
+    border: 1px solid rgba(17, 17, 19, .10);
+    border-radius: var(--radius2);
+    box-shadow: 0 14px 42px rgba(0, 0, 0, .07);
+    transition:
+        transform .32s var(--ease-spring),
+        box-shadow .32s ease,
+        border-color .22s ease;
+}
+
+.wsr-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 28px 62px rgba(0, 0, 0, .12);
+    border-color: rgba(199, 163, 95, .30);
+}
+
+.wsr-step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, var(--gold), var(--gold2));
+    color: #161617;
+    font-weight: 900;
+    font-size: 18px;
+    box-shadow: 0 12px 28px rgba(199, 163, 95, .28);
+    margin-bottom: 18px;
+}
+
+.wsr-step h3 {
+    margin: 0 0 10px;
+    font-weight: 900;
+    font-size: 16px;
+    letter-spacing: -0.01em;
+}
+
+.wsr-step p {
+    margin: 0;
+    color: rgba(18, 18, 21, .68);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.wsr-step-arrow {
+    color: rgba(199, 163, 95, .55);
+    font-size: 30px;
+    padding: 0 14px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* ── Gallery ─────────────────────────────────────────────── */
+.wsr-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 230px;
+    gap: 14px;
+}
+
+.wsr-gal-item {
+    overflow: hidden;
+    cursor: zoom-in;
+    border-radius: var(--radius);
+    margin: 0;
+    transition: transform .35s var(--ease-spring), box-shadow .35s ease;
+    border: 1px solid rgba(17, 17, 19, .10);
+}
+
+.wsr-gal-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 26px 62px rgba(0, 0, 0, .14);
+}
+
+.wsr-gal-item img {
+    transition: transform .55s var(--ease-spring), filter .55s ease;
+}
+
+.wsr-gal-item:hover img {
+    transform: scale(1.08);
+    filter: saturate(1.08) brightness(1.02);
+}
+
+.wsr-gal-big {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* ── Testimonials ────────────────────────────────────────── */
+.wsr-testimonials {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.wsr-testimonial {
+    padding: 32px 28px;
+    border-radius: var(--radius2);
+    border: 1px solid rgba(17, 17, 19, .10);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, .07);
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform .32s var(--ease-spring),
+        box-shadow .32s ease,
+        border-color .22s ease;
+}
+
+.wsr-testimonial::before {
+    content: "\201C";
+    position: absolute;
+    top: 8px;
+    left: 20px;
+    font-size: 90px;
+    line-height: 1;
+    color: rgba(199, 163, 95, .12);
+    font-family: Georgia, serif;
+    pointer-events: none;
+    user-select: none;
+}
+
+.wsr-testimonial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 28px 64px rgba(0, 0, 0, .11);
+    border-color: rgba(199, 163, 95, .24);
+}
+
+.wsr-testimonial .testimonial-stars {
+    margin-bottom: 16px;
+    font-size: 16px;
+    letter-spacing: 3px;
+    color: var(--gold);
+}
+
+.wsr-quote {
+    margin: 0 0 20px;
+    color: rgba(18, 18, 21, .78);
+    line-height: 1.9;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.wsr-author {
+    font-weight: 900;
+    font-size: 14px;
+    color: var(--text);
+}
+
+.wsr-author span {
+    display: block;
+    font-weight: 400;
+    font-size: 12px;
+    color: rgba(18, 18, 21, .52);
+    margin-top: 3px;
+}
+
+/* ── CTA ─────────────────────────────────────────────────── */
+.wsr-cta {
+    text-align: center;
+    padding: 64px 48px;
+    border-radius: var(--radius2);
+    border: 1px solid rgba(17, 17, 19, .09);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .09);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background:
+        radial-gradient(900px 320px at 50% 0%, rgba(199, 163, 95, .13), transparent 55%),
+        rgba(255, 255, 255, .80);
+    backdrop-filter: blur(20px);
+}
+
+.wsr-cta-title {
+    margin: 0;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 900;
+    letter-spacing: -0.025em;
+}
+
+.wsr-cta-text {
+    margin: 0;
+    color: rgba(18, 18, 21, .68);
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 52ch;
+}
+
+.wsr-cta-pills {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 980px) {
+    .wsr-hero {
+        height: 56vh;
+        min-height: 400px;
+    }
+
+    .wsr-hero-title {
+        font-size: clamp(32px, 6vw, 52px);
+    }
+
+    .wsr-split,
+    .wsr-split--flip {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 56px 0;
+    }
+
+    .wsr-split-text .wsr-heading {
+        text-align: center;
+    }
+
+    .wsr-split-text {
+        align-items: center;
+        text-align: center;
+    }
+
+    .wsr-includes {
+        grid-template-columns: 1fr;
+    }
+
+    .wsr-process {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .wsr-step-arrow {
+        transform: rotate(90deg);
+        padding: 0;
+        justify-content: center;
+    }
+
+    .wsr-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 190px;
+    }
+
+    .wsr-gal-big {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .wsr-testimonials {
+        grid-template-columns: 1fr;
+    }
+
+    .wsr-cta {
+        padding: 44px 28px;
+    }
+
+    .wsr-section {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 520px) {
+    .wsr-hero {
+        height: 52vh;
+        min-height: 360px;
+    }
+
+    .wsr-hero-inner {
+        padding-bottom: 36px;
+    }
+
+    .wsr-hero-title {
+        font-size: clamp(28px, 8vw, 40px);
+    }
+
+    .wsr-hero-lead {
+        font-size: 14px;
+    }
+
+    .wsr-gallery {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 150px;
+    }
+
+    .wsr-include-item {
+        padding: 20px;
+    }
+
+    .wsr-cta {
+        padding: 36px 20px;
+    }
+
+    .wsr-section {
+        padding: 48px 0;
     }
 }

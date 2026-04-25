@@ -1,4 +1,14 @@
 /**************************
+ WHATSAPP HELPER (shared)
+**************************/
+function openWhatsAppGeneral(message) {
+    const phoneNumber = "972502642379";
+    const msg = message || "היי שלום, אשמח לקבל מידע נוסף";
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(msg)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+}
+
+/**************************
  NAVBAR MOBILE TOGGLE
 **************************/
 const navToggle = document.querySelector(".nav-toggle");
@@ -55,9 +65,50 @@ const revealObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add("revealed");
     });
-}, { threshold: 0.15 });
+}, { threshold: 0.12 });
 
 revealElements.forEach(el => revealObserver.observe(el));
+
+
+/**************************
+ STAGGER ANIMATION
+ Children inside [data-stagger] reveal with cascading delay
+**************************/
+document.querySelectorAll("[data-stagger]").forEach(parent => {
+    parent.querySelectorAll("[data-reveal]").forEach((child, i) => {
+        child.style.transitionDelay = `${i * 0.09}s`;
+    });
+});
+
+
+/**************************
+ STAT COUNTER ANIMATION
+ Animates [data-count] numbers when scrolled into view
+**************************/
+function animateCount(el, target, duration) {
+    let start = 0;
+    const step = Math.ceil(target / (duration / 16));
+    const timer = setInterval(() => {
+        start += step;
+        if (start >= target) {
+            start = target;
+            clearInterval(timer);
+        }
+        el.textContent = start + "+";
+    }, 16);
+}
+
+const statObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = parseInt(el.dataset.count, 10);
+        if (!isNaN(target)) animateCount(el, target, 900);
+        statObserver.unobserve(el);
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll("[data-count]").forEach(el => statObserver.observe(el));
 
 
 /**************************
@@ -137,7 +188,11 @@ document.addEventListener("keydown", e => {
 /**************************
  WHATSAPP MESSAGE BUILDER
 **************************/
-const waButtons = [...document.querySelectorAll("#waQuick")]; // יש לך פעמיים אותו id ב-HTML, אז אני תופס את כולם
+// כל כפתורי הוואטסאפ בכל הדפים
+const waButtonSelectors = [
+    "#waQuick", "#waWorkshopHero", "#waNavWorkshop"
+];
+const waButtons = [...document.querySelectorAll(waButtonSelectors.join(","))];
 const copyBtn = document.getElementById("copyMsg");
 const copyStatus = document.getElementById("copyStatus");
 
