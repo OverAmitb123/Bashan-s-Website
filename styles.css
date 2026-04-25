@@ -1158,6 +1158,11 @@ footer .copyright {
         padding-top: 24px;
     }
 
+    .media-hero {
+        aspect-ratio: 4 / 3;
+        max-height: 380px;
+    }
+
     .about-grid {
         grid-template-columns: 1fr;
     }
