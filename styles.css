@@ -3408,7 +3408,7 @@ footer .copyright {
     }
 
     .wsr-step-arrow {
-        transform: rotate(90deg);
+        transform: rotate(-90deg);
         padding: 0;
         justify-content: center;
     }
@@ -3469,5 +3469,103 @@ footer .copyright {
 
     .wsr-section {
         padding: 48px 0;
+    }
+}
+
+
+/* =========================================================
+   WORKSHOP TEASER (index.html)
+   ========================================================= */
+.ws-teaser {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-height: 420px;
+    overflow: hidden;
+    border-radius: var(--radius2);
+    border: 1px solid rgba(17, 17, 19, .10);
+    box-shadow: var(--shadow);
+    background: rgba(255, 255, 255, .74);
+    backdrop-filter: blur(18px);
+    transition: box-shadow .38s ease, border-color .28s ease;
+}
+
+.ws-teaser:hover {
+    box-shadow: 0 30px 72px rgba(0, 0, 0, .12);
+    border-color: rgba(199, 163, 95, .22);
+}
+
+.ws-teaser-content {
+    padding: 50px 46px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+
+.ws-teaser-title {
+    margin: 0;
+    font-size: clamp(28px, 3.2vw, 44px);
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+}
+
+.ws-teaser-title span {
+    background: linear-gradient(135deg, var(--gold), var(--gold2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.ws-teaser-text {
+    margin: 0;
+    color: rgba(18, 18, 21, .70);
+    font-size: 15px;
+    line-height: 1.85;
+    max-width: 46ch;
+}
+
+.ws-teaser-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.ws-teaser-image {
+    overflow: hidden;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    min-height: 320px;
+}
+
+.ws-teaser-image img {
+    object-position: center 40%;
+    transition: transform .55s var(--ease-spring);
+}
+
+.ws-teaser:hover .ws-teaser-image img {
+    transform: scale(1.05);
+}
+
+@media (max-width: 800px) {
+    .ws-teaser {
+        grid-template-columns: 1fr;
+    }
+
+    .ws-teaser-image {
+        min-height: 240px;
+        aspect-ratio: 16 / 9;
+    }
+
+    .ws-teaser-content {
+        padding: 34px 30px;
+    }
+}
+
+@media (max-width: 520px) {
+    .ws-teaser-content {
+        padding: 26px 22px;
     }
 }
