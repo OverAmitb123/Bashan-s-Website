@@ -45,6 +45,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -405,8 +406,8 @@ img {
 }
 
 .media-hero {
-    max-height: 690px;
-    aspect-ratio: 3 / 4;
+    height: 690px;
+    max-width: 100%;
 }
 
 .media-hero img {
@@ -1159,8 +1160,8 @@ footer .copyright {
     }
 
     .media-hero {
-        aspect-ratio: 4 / 3;
-        max-height: 380px;
+        height: 320px;
+        max-width: 100%;
     }
 
     .about-grid {
