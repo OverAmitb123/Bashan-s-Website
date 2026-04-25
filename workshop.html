@@ -25,6 +25,8 @@
     <link rel="icon" href="img/favicon.png" type="image/png" />
     <link rel="stylesheet" href="styles.css" />
 
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1" defer></script>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -81,249 +83,209 @@
         </nav>
     </header>
 
-    <main>
-        <section class="section container workshop-page" id="workshops">
+    <main class="container">
 
-            <!-- ─── HERO ─── -->
-            <div class="workshop-hero">
-                <div class="workshop-hero-content glass" data-reveal>
-                    <div class="page-hero-eyebrow">✦ חוויה יצירתית ייחודית</div>
-                    <h1 class="workshop-title">סדנאות בטון<br>אצלכם בבית</h1>
-                    <p class="workshop-text">
-                        Bashan's מגיעים אליכם עם כל הציוד, החומרים, התבניות והכלים —
-                        ומעבירים סדנת בטון חווייתית, נעימה ויצירתית שמתאימה לכולם.
-                        אין צורך בשום ניסיון קודם. פשוט בואו ליהנות וליצור.
-                    </p>
-
-                    <div class="workshop-tags">
-                        <span class="workshop-pill">✓ ללא ניסיון קודם</span>
-                        <span class="workshop-pill">✓ מגיעים עד אליכם</span>
-                        <span class="workshop-pill">✓ כולל כל הציוד</span>
-                        <span class="workshop-pill">✓ חוויה אישית ומיוחדת</span>
-                    </div>
-
-                    <div class="workshop-actions">
-                        <a class="btn btn-gold btn-xl" id="waWorkshopHero" href="#">לתיאום סדנה בוואטסאפ</a>
-                        <a class="btn btn-glass btn-xl" href="#workshop-gallery">לצפייה בתמונות</a>
-                    </div>
+        <!-- ─── CINEMATIC HERO ─── -->
+        <section class="wsr-hero" data-reveal>
+            <img class="wsr-hero-bg" src="img/pic28.jpg" alt="סדנת בטון של Bashan's" loading="eager" />
+            <div class="wsr-hero-inner">
+                <p class="wsr-hero-eyebrow">✦ חוויה יצירתית ייחודית</p>
+                <h1 class="wsr-hero-title">סדנאות בטון<br>אצלכם בבית</h1>
+                <p class="wsr-hero-sub">מגיעים אליכם עם כל הציוד, החומרים והחיוך — ויוצרים יחד רגע שלא תשכחו.</p>
+                <div class="wsr-hero-actions">
+                    <a class="btn btn-gold btn-xl" id="waWorkshopHero" href="#">לתיאום סדנה בוואטסאפ</a>
+                    <a class="btn btn-ghost btn-xl" href="#wsr-gallery" style="color:#fff; border-color:rgba(255,255,255,.45);">לצפייה בתמונות</a>
                 </div>
+            </div>
+        </section>
 
-                <figure class="workshop-main-image media bordered lightbox-item" data-reveal data-full="img/pic28.jpg" tabindex="0">
-                    <img src="img/pic28.jpg" alt="סדנת בטון של Bashan's — יצירה משותפת בבית הלקוח" loading="eager" />
+        <!-- ─── STATS STRIP ─── -->
+        <div class="stats-strip" data-reveal>
+            <div class="stat-item">
+                <span class="stat-num" data-count="50">50+</span>
+                <span class="stat-label">סדנאות הועברו</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num" data-count="300">300+</span>
+                <span class="stat-label">משתתפים מרוצים</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">5 ★</span>
+                <span class="stat-label">דירוג ממוצע</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">100%</span>
+                <span class="stat-label">ללא ניסיון קודם</span>
+            </div>
+        </div>
+
+        <!-- ─── SPLIT: מה כולל המפגש ─── -->
+        <div class="wsr-split" data-reveal>
+            <figure class="wsr-split-img">
+                <img src="img/pic29.jpg" alt="מה כולל המפגש — סדנת בטון של Bashan's" loading="lazy" />
+            </figure>
+            <div class="wsr-split-text">
+                <p class="wsr-split-eyebrow">המפגש</p>
+                <h2 class="wsr-split-title">מה כולל המפגש?</h2>
+                <p class="wsr-split-body">
+                    אנחנו מביאים איתנו את כל מה שצריך: חומרים, תבניות, ציוד וליווי מלא לאורך הסדנה.
+                    המשתתפים נהנים מחוויה מסודרת, נעימה ומודרכת — מהשלב הראשון ועד התוצר הסופי.
+                </p>
+                <div class="wsr-tags">
+                    <span class="wsr-tag">✓ ללא ניסיון קודם</span>
+                    <span class="wsr-tag">✓ מגיעים עד אליכם</span>
+                    <span class="wsr-tag">✓ כולל כל הציוד</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ─── SPLIT FLIP: למי זה מתאים ─── -->
+        <div class="wsr-split wsr-split--flip" data-reveal>
+            <figure class="wsr-split-img">
+                <img src="img/pic30.jpg" alt="לכולם — סדנת בטון של Bashan's" loading="lazy" />
+            </figure>
+            <div class="wsr-split-text">
+                <p class="wsr-split-eyebrow">למי זה מתאים?</p>
+                <h2 class="wsr-split-title">לכולם — ממש לכולם</h2>
+                <p class="wsr-split-body">
+                    ימי הולדת, מפגשי חברות, ערבי יצירה, זוגות, משפחות, אירועים קטנים —
+                    כל מי שרוצה חוויה מיוחדת ושונה באווירה אישית ונעימה.
+                    אין צורך בשום רקע קודם — הסדנה בנויה כך שכל אחד יוצא עם יצירה שהוא גאה בה.
+                </p>
+                <div class="wsr-tags">
+                    <span class="wsr-tag">ימי הולדת</span>
+                    <span class="wsr-tag">גיבוש צוות</span>
+                    <span class="wsr-tag">ערב חברות</span>
+                    <span class="wsr-tag">משפחות</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ─── INCLUDES GRID ─── -->
+        <div class="wsr-includes" data-stagger>
+            <div class="wsr-inc-card" data-reveal>
+                <div class="wsr-inc-icon" aria-hidden="true">
+                    <i class="ph-bold ph-shapes"></i>
+                </div>
+                <h3 class="wsr-inc-title">תבניות וכלי עיצוב</h3>
+                <p class="wsr-inc-body">מבחר תבניות ייחודיות ליצירת כלי בטון בצורות וגדלים שונים — מקצועיות ומוכנות לשימוש.</p>
+            </div>
+            <div class="wsr-inc-card" data-reveal>
+                <div class="wsr-inc-icon" aria-hidden="true">
+                    <i class="ph-bold ph-stack"></i>
+                </div>
+                <h3 class="wsr-inc-title">חומרים מקצועיים</h3>
+                <p class="wsr-inc-body">בטון, פיגמנטים לצביעה, ציוד עיבוד וגימור — הכל מוכן ומדוד, אתם פשוט יוצרים.</p>
+            </div>
+            <div class="wsr-inc-card" data-reveal>
+                <div class="wsr-inc-icon" aria-hidden="true">
+                    <i class="ph-bold ph-graduation-cap"></i>
+                </div>
+                <h3 class="wsr-inc-title">הדרכה אישית מלאה</h3>
+                <p class="wsr-inc-body">ליווי שלב אחר שלב, הסברים ברורים ונגישים לכולם — גם למי שמעולם לא נגע בבטון.</p>
+            </div>
+            <div class="wsr-inc-card" data-reveal>
+                <div class="wsr-inc-icon" aria-hidden="true">
+                    <i class="ph-bold ph-toolbox"></i>
+                </div>
+                <h3 class="wsr-inc-title">כל הציוד הנלווה</h3>
+                <p class="wsr-inc-body">כפפות, סינרים, ציוד הגנה — אנחנו דואגים לכל הפרטים. אתם פשוט פותחים את הדלת.</p>
+            </div>
+        </div>
+
+        <!-- ─── PROCESS ─── -->
+        <div class="wsr-process-bg" data-reveal>
+            <div class="wsr-process-head">
+                <h2 class="wsr-process-title">איך זה עובד?</h2>
+            </div>
+            <div class="wsr-process">
+                <div class="wsr-step">
+                    <div class="wsr-step-num">01</div>
+                    <h3 class="wsr-step-title">מתאמים מקום וזמן</h3>
+                    <p class="wsr-step-body">שולחים הודעה בוואטסאפ, קובעים תאריך ומיקום שמתאים לכם — אנחנו מגיעים.</p>
+                </div>
+                <div class="wsr-step-arrow" aria-hidden="true">←</div>
+                <div class="wsr-step">
+                    <div class="wsr-step-num">02</div>
+                    <h3 class="wsr-step-title">מגיעים עם הכל</h3>
+                    <p class="wsr-step-body">חומרים, תבניות, ציוד והדרכה — הכל מגיע מוכן ומסודר. אתם פשוט פותחים את הדלת.</p>
+                </div>
+                <div class="wsr-step-arrow" aria-hidden="true">←</div>
+                <div class="wsr-step">
+                    <div class="wsr-step-num">03</div>
+                    <h3 class="wsr-step-title">יוצרים ונהנים</h3>
+                    <p class="wsr-step-body">חוויה כיפית, רגועה ויצירתית — ובסוף כל אחד לוקח הביתה יצירה שיצר בעצמו.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ─── GALLERY ─── -->
+        <div class="wsr-gallery-wrap" id="wsr-gallery">
+            <div class="wsr-gallery-head" data-reveal>
+                <h2 class="section-title">רגעים מהסדנאות</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">כל סדנה היא חוויה בפני עצמה — ריח הבטון, המגע בחומר, והאנשים שסביבך.</p>
+            </div>
+
+            <div class="wsr-gallery" data-stagger>
+                <figure class="wsr-gal-item wsr-gal-big lightbox-item" data-reveal data-full="img/pic29.jpg" tabindex="0">
+                    <img src="img/pic29.jpg" alt="סדנת בטון — רגע יצירה" loading="lazy" />
+                </figure>
+                <figure class="wsr-gal-item wsr-gal-sm lightbox-item" data-reveal data-full="img/pic30.jpg" tabindex="0">
+                    <img src="img/pic30.jpg" alt="סדנת בטון — עבודה עם חומרים" loading="lazy" />
+                </figure>
+                <figure class="wsr-gal-item wsr-gal-sm lightbox-item" data-reveal data-full="img/pic31.jpg" tabindex="0">
+                    <img src="img/pic31.jpg" alt="סדנת בטון — תוצר סופי" loading="lazy" />
+                </figure>
+                <figure class="wsr-gal-item wsr-gal-sm lightbox-item" data-reveal data-full="img/pic32.jpg" tabindex="0">
+                    <img src="img/pic32.jpg" alt="כלי בטון מסדנת Bashan's" loading="lazy" />
+                </figure>
+                <figure class="wsr-gal-item wsr-gal-sm lightbox-item" data-reveal data-full="img/pic33.jpg" tabindex="0">
+                    <img src="img/pic33.jpg" alt="יצירה בסדנת בטון" loading="lazy" />
+                </figure>
+                <figure class="wsr-gal-item wsr-gal-sm lightbox-item" data-reveal data-full="img/pic34.jpg" tabindex="0">
+                    <img src="img/pic34.jpg" alt="תוצרי סדנת בטון" loading="lazy" />
                 </figure>
             </div>
+        </div>
 
-            <!-- ─── STATS STRIP ─── -->
-            <div class="stats-strip" data-reveal>
-                <div class="stat-item">
-                    <span class="stat-num" data-count="50">50+</span>
-                    <span class="stat-label">סדנאות הועברו</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-num" data-count="300">300+</span>
-                    <span class="stat-label">משתתפים מרוצים</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-num">5 ★</span>
-                    <span class="stat-label">דירוג ממוצע</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-num">100%</span>
-                    <span class="stat-label">ללא ניסיון קודם</span>
-                </div>
+        <!-- ─── TESTIMONIALS ─── -->
+        <div class="wsr-testimonials" data-stagger>
+            <div class="wsr-tcard" data-reveal>
+                <div class="wsr-tcard-stars" aria-label="דירוג 5 כוכבים">★★★★★</div>
+                <p class="wsr-tcard-text">"חוויה מדהימה! הגיעו מוכנים עם הכל, הסבירו בצורה הכי נגישה, ויצרנו יחד משהו שאני כבר לא מפסיקה להתגאות בו. חובה לכולם!"</p>
+                <div class="wsr-tcard-author">מיכל ר.</div>
+                <div class="wsr-tcard-role">סדנת יום הולדת</div>
             </div>
-
-            <!-- ─── FEATURE CARDS ─── -->
-            <div class="workshop-grid">
-                <article class="workshop-card glass" data-reveal>
-                    <div class="feature-icon" style="margin-bottom: 14px; width: 44px; height: 44px; font-size: 20px;" aria-hidden="true">🎨</div>
-                    <h2 class="card-title">מה כולל המפגש?</h2>
-                    <p class="card-text">
-                        אנחנו מביאים איתנו את כל מה שצריך: חומרים, תבניות, ציוד וליווי מלא לאורך הסדנה.
-                        המשתתפים נהנים מחוויה מסודרת, נעימה ומודרכת — מהשלב הראשון ועד התוצר הסופי.
-                    </p>
-                </article>
-
-                <article class="workshop-card glass" data-reveal>
-                    <div class="feature-icon" style="margin-bottom: 14px; width: 44px; height: 44px; font-size: 20px;" aria-hidden="true">👥</div>
-                    <h2 class="card-title">למי זה מתאים?</h2>
-                    <p class="card-text">
-                        לימי הולדת, מפגשי חברות, ערבי יצירה, זוגות, משפחות, אירועים קטנים —
-                        כל מי שרוצה חוויה מיוחדת ושונה באווירה אישית ונעימה.
-                    </p>
-                </article>
-
-                <article class="workshop-card glass" data-reveal>
-                    <div class="feature-icon" style="margin-bottom: 14px; width: 44px; height: 44px; font-size: 20px;" aria-hidden="true">⭐</div>
-                    <h2 class="card-title">צריך ניסיון קודם?</h2>
-                    <p class="card-text">
-                        ממש לא. הסדנה בנויה כך שכל אחד יכול להשתתף, ליהנות וליצור — גם בלי רקע קודם בכלל.
-                        אנחנו מדריכים, מסבירים ומלווים אתכם לאורך כל הדרך.
-                    </p>
-                </article>
+            <div class="wsr-tcard" data-reveal>
+                <div class="wsr-tcard-stars" aria-label="דירוג 5 כוכבים">★★★★★</div>
+                <p class="wsr-tcard-text">"הזמנו סדנה לאירוע גיבוש של הצוות — כולם פשוט אהבו. מקצועי, אישי, ובסוף יצאנו עם יצירות שכולם לקחו הביתה. מאוד מומלץ!"</p>
+                <div class="wsr-tcard-author">דוד כ.</div>
+                <div class="wsr-tcard-role">אירוע גיבוש צוותי</div>
             </div>
-
-            <!-- ─── WHAT'S INCLUDED ─── -->
-            <div class="workshop-flow glass" data-reveal>
-                <div class="section-head">
-                    <h2 class="section-title">מה מגיע איתנו?</h2>
-                    <div class="section-divider"></div>
-                    <p class="section-subtitle">אתם לא צריכים להכין שום דבר — אנחנו מדאגים לכל הפרטים.</p>
-                </div>
-                <div class="inclusion-list">
-                    <div class="inclusion-item">
-                        <div class="inclusion-icon" aria-hidden="true">🏺</div>
-                        <div class="inclusion-text">
-                            <strong>תבניות וכלי עיצוב מקצועיים</strong>
-                            <span>מבחר תבניות ייחודיות ליצירת כלי בטון בצורות וגדלים שונים</span>
-                        </div>
-                    </div>
-                    <div class="inclusion-item">
-                        <div class="inclusion-icon" aria-hidden="true">🪨</div>
-                        <div class="inclusion-text">
-                            <strong>חומרים מקצועיים באיכות גבוהה</strong>
-                            <span>בטון, פיגמנטים לצביעה, ציוד עיבוד וגימור — הכל מוכן ומדוד</span>
-                        </div>
-                    </div>
-                    <div class="inclusion-item">
-                        <div class="inclusion-icon" aria-hidden="true">🎓</div>
-                        <div class="inclusion-text">
-                            <strong>הדרכה אישית מלאה לאורך הסדנה</strong>
-                            <span>ליווי שלב אחר שלב, הסברים ברורים ונגישים לכולם — גם למי שמעולם לא נגע בבטון</span>
-                        </div>
-                    </div>
-                    <div class="inclusion-item">
-                        <div class="inclusion-icon" aria-hidden="true">📦</div>
-                        <div class="inclusion-text">
-                            <strong>כל הציוד הנלווה</strong>
-                            <span>כפפות, סינרים, ציוד הגנה — אתם פשוט פותחים את הדלת ואנחנו מדאגים לשאר</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="wsr-tcard" data-reveal>
+                <div class="wsr-tcard-stars" aria-label="דירוג 5 כוכבים">★★★★★</div>
+                <p class="wsr-tcard-text">"יצרתי כלי בטון לראשונה בחיי ולא האמנתי שאצליח. יצא מדהים! הסדנה הייתה חוויה שונה לגמרי ממה שציפיתי — הרבה יותר כיפי ומרגש."</p>
+                <div class="wsr-tcard-author">תמר ל.</div>
+                <div class="wsr-tcard-role">סדנה פרטית</div>
             </div>
+        </div>
 
-            <!-- ─── HOW IT WORKS ─── -->
-            <div class="workshop-flow bordered" data-reveal>
-                <div class="section-head">
-                    <h2 class="section-title">איך זה עובד?</h2>
-                    <div class="section-divider"></div>
-                </div>
-
-                <div class="workshop-steps">
-                    <div class="step">
-                        <div class="step-num">01</div>
-                        <div class="step-body">
-                            <h3 class="step-title">מתאמים מקום וזמן</h3>
-                            <p class="step-text">שולחים הודעה בוואטסאפ, קובעים תאריך ומיקום שמתאים לכם — אנחנו מגיעים.</p>
-                        </div>
-                    </div>
-
-                    <div class="step">
-                        <div class="step-num">02</div>
-                        <div class="step-body">
-                            <h3 class="step-title">מגיעים עם הכל</h3>
-                            <p class="step-text">חומרים, תבניות, ציוד והדרכה — הכל מגיע מוכן ומסודר. אתם פשוט פותחים את הדלת.</p>
-                        </div>
-                    </div>
-
-                    <div class="step">
-                        <div class="step-num">03</div>
-                        <div class="step-body">
-                            <h3 class="step-title">יוצרים ונהנים</h3>
-                            <p class="step-text">חוויה כיפית, רגועה ויצירתית — ובסוף כל אחד לוקח הביתה יצירה שיצר בעצמו.</p>
-                        </div>
-                    </div>
-                </div>
+        <!-- ─── CTA ─── -->
+        <div class="wsr-cta" data-reveal>
+            <h2 class="wsr-cta-title">רוצה לקבוע סדנה?</h2>
+            <p class="wsr-cta-sub">
+                שלחו הודעה ונשמח לתאם איתכם חוויה מיוחדת, אסתטית ומלאת יצירה —
+                אצלכם בבית, בגינה, בעבודה, או בכל מקום שתבחרו.
+            </p>
+            <div class="wsr-cta-tags">
+                <span class="wsr-tag">מינימום 2 משתתפים</span>
+                <span class="wsr-tag">ניתן להתאים לכל קבוצה</span>
+                <span class="wsr-tag">מגיעים עד אליכם</span>
             </div>
+            <a class="btn btn-gold btn-xl" id="waQuick" href="#">לתיאום בוואטסאפ</a>
+        </div>
 
-            <!-- ─── GALLERY ─── -->
-            <div class="workshop-gallery-wrap" id="workshop-gallery">
-                <div class="section-head" data-reveal>
-                    <h2 class="section-title">רגעים מהסדנאות</h2>
-                    <div class="section-divider"></div>
-                    <p class="section-subtitle">כל סדנה היא חוויה בפני עצמה — ריח הבטון, המגע בחומר, והאנשים שסביבך.</p>
-                </div>
-
-                <!-- Main enhanced gallery: 1 large + 2 stacked -->
-                <div class="workshop-gallery-enhanced">
-                    <figure class="media bordered workshop-frame workshop-frame--main lightbox-item" data-reveal data-full="img/pic29.jpg" tabindex="0">
-                        <img src="img/pic29.jpg" alt="סדנת בטון — רגע יצירה" loading="lazy" />
-                    </figure>
-                    <div class="workshop-gallery-enhanced-right">
-                        <figure class="media bordered workshop-frame workshop-frame--side lightbox-item" data-reveal data-full="img/pic30.jpg" tabindex="0">
-                            <img src="img/pic30.jpg" alt="סדנת בטון — עבודה עם חומרים" loading="lazy" />
-                        </figure>
-                        <figure class="media bordered workshop-frame workshop-frame--side lightbox-item" data-reveal data-full="img/pic31.jpg" tabindex="0">
-                            <img src="img/pic31.jpg" alt="סדנת בטון — תוצר סופי" loading="lazy" />
-                        </figure>
-                    </div>
-                </div>
-
-                <!-- Secondary 4-image grid -->
-                <div class="workshop-gallery" style="margin-top: 14px;">
-                    <figure class="media bordered workshop-frame lightbox-item" data-reveal data-full="img/pic32.jpg" tabindex="0">
-                        <img src="img/pic32.jpg" alt="כלי בטון מסדנת Bashan's" loading="lazy" />
-                    </figure>
-                    <figure class="media bordered workshop-frame lightbox-item" data-reveal data-full="img/pic33.jpg" tabindex="0">
-                        <img src="img/pic33.jpg" alt="יצירה בסדנת בטון" loading="lazy" />
-                    </figure>
-                    <figure class="media bordered workshop-frame lightbox-item" data-reveal data-full="img/pic34.jpg" tabindex="0">
-                        <img src="img/pic34.jpg" alt="תוצרי סדנת בטון" loading="lazy" />
-                    </figure>
-                    <figure class="media bordered workshop-frame lightbox-item" data-reveal data-full="img/pic35.jpg" tabindex="0">
-                        <img src="img/pic35.jpg" alt="חוויית הסדנה" loading="lazy" />
-                    </figure>
-                </div>
-            </div>
-
-            <!-- ─── TESTIMONIALS ─── -->
-            <div class="workshop-gallery-wrap">
-                <div class="section-head" data-reveal>
-                    <h2 class="section-title">מה אומרים המשתתפים</h2>
-                    <div class="section-divider"></div>
-                </div>
-                <div class="testimonials-grid">
-                    <div class="testimonial-card glass" data-reveal>
-                        <div class="testimonial-stars" aria-label="דירוג 5 כוכבים">★★★★★</div>
-                        <p class="testimonial-text">"חוויה מדהימה! הגיעו מוכנים עם הכל, הסבירו בצורה הכי נגישה, ויצרנו יחד משהו שאני כבר לא מפסיקה להתגאות בו. חובה לכולם!"</p>
-                        <div class="testimonial-author">מיכל ר.</div>
-                        <div class="testimonial-role">סדנת יום הולדת</div>
-                    </div>
-
-                    <div class="testimonial-card glass" data-reveal>
-                        <div class="testimonial-stars" aria-label="דירוג 5 כוכבים">★★★★★</div>
-                        <p class="testimonial-text">"הזמנו סדנה לאירוע גיבוש של הצוות — כולם פשוט אהבו. מקצועי, אישי, ובסוף יצאנו עם יצירות שכולם לקחו הביתה. מאוד מומלץ!"</p>
-                        <div class="testimonial-author">דוד כ.</div>
-                        <div class="testimonial-role">אירוע גיבוש צוותי</div>
-                    </div>
-
-                    <div class="testimonial-card glass" data-reveal>
-                        <div class="testimonial-stars" aria-label="דירוג 5 כוכבים">★★★★★</div>
-                        <p class="testimonial-text">"יצרתי כלי בטון לראשונה בחיי ולא האמנתי שאצליח. יצא מדהים! הסדנה הייתה חוויה שונה לגמרי ממה שציפיתי — הרבה יותר כיפי ומרגיש."</p>
-                        <div class="testimonial-author">תמר ל.</div>
-                        <div class="testimonial-role">סדנה פרטית</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ─── CTA ─── -->
-            <div class="workshop-cta glass" data-reveal>
-                <div>
-                    <h2 class="gallery-cta-title" style="font-size: clamp(20px, 2.5vw, 28px);">רוצה לקבוע סדנה?</h2>
-                    <p class="gallery-cta-sub">
-                        שלחו הודעה ונשמח לתאם איתכם חוויה מיוחדת, אסתטית ומלאת יצירה —
-                        אצלכם בבית, בגינה, בעבודה, או בכל מקום שתבחרו.
-                    </p>
-                    <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px;">
-                        <span class="workshop-pill">מינימום 2 משתתפים</span>
-                        <span class="workshop-pill">ניתן להתאים לכל קבוצה</span>
-                        <span class="workshop-pill">מגיעים עד אליכם</span>
-                    </div>
-                </div>
-                <a class="btn btn-gold btn-xl" id="waQuick" href="#">לתיאום בוואטסאפ</a>
-            </div>
-
-        </section>
     </main>
 
     <section class="socials">
