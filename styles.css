@@ -45,7 +45,6 @@
 
 html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
 }
 
 body {
@@ -343,7 +342,7 @@ img {
     grid-template-columns: 1.05fr .95fr;
     gap: 26px;
     padding-top: 34px;
-    align-items: center;
+    align-items: stretch;
 }
 
 .hero-title {
@@ -391,6 +390,7 @@ img {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    height: 100%;
 }
 
 
@@ -406,12 +406,7 @@ img {
 }
 
 .media-hero {
-    height: 690px;
-    max-width: 100%;
-}
-
-.media-hero img {
-    object-position: center 60%;
+    min-height: 360px;
 }
 
 .glass {
@@ -1159,10 +1154,6 @@ footer .copyright {
         padding-top: 24px;
     }
 
-    .media-hero {
-        height: 320px;
-        max-width: 100%;
-    }
 
     .about-grid {
         grid-template-columns: 1fr;
